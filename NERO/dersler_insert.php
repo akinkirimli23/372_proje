@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 
-$ders_kodu = $_POST['ders_koduAAAAA'];
+$ders_kodu = $_POST['ders_kodu'];
 $aktiflik = $_POST['aktiflik'];
 $ders_isim = $_POST['ders_isim'];
 $öğretmen_id = $_POST['öğretmen_id'];
