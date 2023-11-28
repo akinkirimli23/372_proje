@@ -10,16 +10,16 @@ if ($conn->connect_error) {
 }
 
 
-$öğrenci_id = $_POST['id'];
-$başlangıç_saat = $_POST['başlangıç_saat'];
+$öğretmen_id  = $_POST['öğretmen_id'];
 $gün_adı = $_POST['gün_adı'];
+$başlangıç_saati = $_POST['başlangıç_saati'];
 $bitiş_saati = $_POST['bitiş_saati'];
  
 
-$sql = "INSERT INTO öğrenci_gün_ve_saat (öğrenci_id,başlangıç_saat,gün_adı,bitiş_saati) VALUES ('$öğrenci_id', '$başlangıç_saat', '$gün_adı', '$bitiş_saati')";
+$sql = "INSERT INTO parttimeöğretmen_gün_ve_saat (öğretmen_id ,gün_adı,başlangıç_saati,bitiş_saati) VALUES ('$öğretmen_id ','$gün_adı', '$başlangıç_saati','$bitiş_saati')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: ogrenci.php");
+    header("Location: Ogretmen.php");
     
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;

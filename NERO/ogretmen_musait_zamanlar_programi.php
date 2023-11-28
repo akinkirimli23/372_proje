@@ -11,21 +11,19 @@ if ($conn->connect_error) {
 }
 
 if (isset($_GET['öğretmen_id'])) {
-    // Retrieve the id from the URL parameter
+
     $öğretmen_id = $_GET['öğretmen_id'];
 
-    // Now you can use $id in your code
-   // echo "Selected öğretmen ID: " . $öğretmen_id;
+    echo "Selected öğrenci ID: " . $öğretmen_id;
 } else {
-    // Handle the case where 'id' is not set in the URL
-   // echo "Student ID is not provided in the URL.";
+    
+    echo "Student ID is not provided in the URL.";
 }
 
 $sql = "SELECT *
         FROM öğretmen
-        JOIN dersler ON öğretmen.öğretmen_id = dersler.öğretmen_id  
-        JOIN ders_gün_saat ON ders_gün_saat.ders_kodu = dersler.ders_kodu
-        WHERE öğretmen.öğretmen_id = '$öğretmen_id';";
+        JOIN parttimeöğretmen_gün_ve_saat ON öğretmen.öğretmen_id = parttimeöğretmen_gün_ve_saat.öğretmen_id  
+        WHERE öğretmen.öğretmen_id  = '$öğretmen_id';";
 
 
 $result = $conn->query($sql);
@@ -38,7 +36,7 @@ if ($result->num_rows > 0) {
   }
 }
 
-$ders_programı = array(
+$program = array(
     array("8.00 - 9.00", "", "", "", "", "", "", ""),
     array("9.00 - 10.00", "", "", "", "", "", "", ""),
     array("10.00 - 11.00", "", "", "", "", "", "", ""),
@@ -48,11 +46,12 @@ $ders_programı = array(
     array("14.00 - 15.00", "", "", "", "", "", "", ""),
     array("15.00 - 16.00", "", "", "", "", "", "", ""),
     array("16.00 - 17.00", "", "", "", "", "", "", ""),
-    array("17.00 - 18.00", "", "", "", "", "", "", "")
+    array("17.00 - 18.00", "", "", "", "", "", "", ""),
+    array("18.00 - 19.00", "", "", "", "", "", "", ""),
+    array("19.00 - 20.00", "", "", "", "", "", "", "")
 );
 
 foreach ($data as $row) {
-    if($row["aktiflik"] == "aktif"){
         if($row["gün_adı"] == "Pazartesi"){
             $gün = 1;
         }
@@ -78,7 +77,6 @@ foreach ($data as $row) {
 
         }
         
-
         $startTime = $row["başlangıç_saati"];
         $endTime = $row["bitiş_saati"];
 
@@ -90,18 +88,17 @@ foreach ($data as $row) {
             // Extract the hour component
             $hourAsInt = (int) $startTimeObj->format('G');
             $hourAsInt2 = (int) $endTimeObj->format('G');
-
-        } else {
         }
-        //$hourAsInt = date("G", strtotime($row["başlangıç_saati"]));
-        //$hourAsInt2 = date("G", strtotime($row["bitiş_saati"]));
+        else {
+        
+        }
+
         $saat_başlangıç = $hourAsInt - 8;
         $saat_bitiş = $hourAsInt2 - 8;
         
         for($i = $saat_başlangıç ; $i < $saat_bitiş ; $i++){
-            $ders_programı[$i][$gün] = "$row[ders_isim]";
+            $program[$i][$gün] = "müsait";
         }
-    }
 }
 
 $conn->close();
@@ -159,11 +156,14 @@ $conn->close();
             </div>
         </nav>
 
-      <h1>Öğretmenler</h1>
+      <h1>Öğrenciler</h1>
     </section>
-    <br>
-    <br>
 
+
+        <section class="blog-content">
+            
+
+        </section>
 
 
 
@@ -173,8 +173,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Öğretmen Ders Programı</h1>
-        <br>
+        <h1>Öğretmen Müsait Zamanlar Programı</h1>
         <br>
     </div>
     <body style="background-color:powderblue;">
@@ -195,22 +194,18 @@ $conn->close();
 
         <?php
 
-        for($i = 0 ; $i < 10 ; $i++){
-           // for ($j=0 ; $j<8 ; $j++) {
-                
+        for($i = 0 ; $i < 12 ; $i++){
+            
                     echo "<tr>";
-                    echo "<td>" . $ders_programı[$i][0] . "</td>";
-                    echo "<td>" . $ders_programı[$i][1] . "</td>";
-                    echo "<td>" . $ders_programı[$i][2] . "</td>";
-                    echo "<td>" . $ders_programı[$i][3] . "</td>";
-                    echo "<td>" . $ders_programı[$i][4] . "</td>";
-                    echo "<td>" . $ders_programı[$i][5] . "</td>";
-                    echo "<td>" . $ders_programı[$i][6] . "</td>";
-                    echo "<td>" . $ders_programı[$i][7] . "</td>";
+                    echo "<td>" . $program[$i][0] . "</td>";
+                    echo "<td>" . $program[$i][1] . "</td>";
+                    echo "<td>" . $program[$i][2] . "</td>";
+                    echo "<td>" . $program[$i][3] . "</td>";
+                    echo "<td>" . $program[$i][4] . "</td>";
+                    echo "<td>" . $program[$i][5] . "</td>";
+                    echo "<td>" . $program[$i][6] . "</td>";
+                    echo "<td>" . $program[$i][7] . "</td>";
                     echo "</tr>";
-                
-
-            //}
         }
         ?>
     </table>

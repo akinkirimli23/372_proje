@@ -94,11 +94,13 @@ $conn->close();
                                                 <li> <a href="veli.php">Velilerimiz</a></li>
                                                 <li> <a href="mezunlar.php">Mezunlarımız</a></li>
                                                 <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                               
+                                                <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
                                                 <li> <a href="ogrenci.php">Öğrenci</a></li>
                                                 <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="idari_personel_part_time.php">idariPersonel</a></li>
                                                 <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                                                 <li> <a href="dersler.php">Dersler</a></li>
+                                                <li> <a href="giderler.php">Giderler</a></li>        
 
 
                     </ul>
@@ -127,6 +129,7 @@ $conn->close();
             <label for="ders_kodu">Ders Kodu:</label>
             <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen ders_kodu giriniz" required>
         
+
         
             <label for="aktiflik">Aktiflik:</label>
             <input type="text" name="aktiflik" id="aktiflik" placeholder="Lütfen dersin aktiflik durumunu giriniz" required>
@@ -135,17 +138,46 @@ $conn->close();
             <input type="text" name="ders_isim" id="ders_isim" placeholder="Lütfen ders ismini giriniz" required>
             
             <label for="öğretmen_id">Öğretmen Id:</label>
-            <input type="text" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required>
+            <input type="number" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required>
         
             <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
         
             <button type="submit" class="hero-btn red-btn">Gönder</button> 
+
+        </form>
+        <br>
+        <br><br>
+        <div class="contact-col">
+    
+        <form method="POST" action="ders_gün_saat_insert.php" enctype="multipart/form-data">
+    
+        <label for="ders_kodu">Ders Kodu:</label>
+        <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen Ders kodu giriniz" required>
+    
+    
+        <label for="gün_adı">Gün Adı:</label>
+        <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen dersin Gününü giriniz" required>
+    
+        <label for="başlangıç_saati">Başlangıç Saati:</label>
+        <input type="time" name="başlangıç_saati" id="başlangıç_saati" placeholder="Lütfen Ders Başlangıç Saati giriniz" required>
+        
+        <label for="bitiş_saati">Bitiş Saati:</label>
+        <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
+    
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+    
+        <button type="submit" class="hero-btn red-btn">Gönder</button> 
         </form>
     
-    
-            
         </div>
-    </div>
+        <br>
+        <br>
+
+        </div>
+        <br>
+        <br>
+        
+        
     
 	<head> 
 		<title> Fetch Data From Database </title> 
@@ -183,4 +215,5 @@ $conn->close();
         ?>
     </table>
 </body>
+</section>
 </html>

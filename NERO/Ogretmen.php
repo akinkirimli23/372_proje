@@ -29,40 +29,13 @@ $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
-      //  echo "ozi"
-      //  echo $data[0];
+
     }
 }
 
-/*$size = count($data);
-for($x = 0; $x < $size; $x++){
-    if($data[$x]["yaş"] == "31"){
-        if (!empty($data)) {
-            $firstRow = $data[$x];
-            echo "<tr>";
-            echo "<td>" . $firstRow["öğretmen_id"] . "</td>" ;    
-            echo "<td>" . $firstRow["isim"] . "</td>";
-            echo "<td>" . $firstRow["soy_isim"] . "</td>";
-            echo "<td>" . $firstRow["yaş"] . "</td>";
-            echo "<td>" . $firstRow["cinsiyet"] . "</td>";
-            echo "<td>" . $firstRow["adres"] . "</td>";
-            echo "<td>" . $firstRow["telefon"] . "</td>";
-            echo "<td>" . $firstRow["maaş"] . "</td>";
-            echo "<td>" . $firstRow["çalışma_durumu"] . "</td>";
-            echo "</tr>";
-            echo "</br>"; 
-        } else {
-            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
-        }
-    }
-}*/
 $conn->close();
 
 ?>  
-
-
-
-
 
 <!DOCTYPE html>
 <html> 
@@ -99,33 +72,30 @@ $conn->close();
         
     </style>
 
-
 </head>
 
 
-
 <body>  
-
-
 
 
     <section class="sub-header">    
         
         <nav>
             
-            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
-            <div class="nav-links">
+        <a href="index.html"><img src="Resim/home.png" alt=""></a>            <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                                                <li> <a href="veli.php">Velilerimiz</a></li>
-                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                                <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
-                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
-                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
-                                                <li> <a href="idari_personel_part_time.php">idariPersonel</a></li>
-                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                                                <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="veli.php">Velilerimiz</a></li>
+                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                        <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
+                        <li> <a href="ogrenci.php">Öğrenci</a></li>
+                        <li> <a href="idari_personel.php">İdari Personel</a></li>
+                        <li> <a href="idari_personel_part_time.php">idari Personel Part Time</a></li>
+                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                        <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="giderler.php">Giderler</a></li>      
+
                     </ul>
             </div>
         </nav>
@@ -182,10 +152,35 @@ $conn->close();
 
     <button type="submit">Gönder</button>
     </form>
-
-
+    <br>
+    <br>
         
     </div>
+    <div class="contact-col">
+    <form method="POST" action="parttimeöğretmen_gün_ve_saat_insert.php" enctype="multipart/form-data">
+     
+
+    
+        <label for="öğretmen_id">Öğretmen ID:</label>
+        <input type="number" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen İdari Personel ID giriniz" required>
+
+        <label for="gün_adı">Gün Adı:</label>
+        <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen Gün Adı giriniz" required>
+
+        <label for="başlangıç_saati">Başlangıç Saat:</label>
+        <input type="time" name="başlangıç_saati" id="başlangıç_saati" placeholder="Lütfen Başlangıç Saat giriniz" required>
+
+        <label for="bitiş_saati">Bitiş Saati:</label>
+        <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
+
+        
+        <br>
+        <br>
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+
+        <button type="submit" class="hero-btn red-btn">Gönder</button> 
+    </form>
+</div>
 </div>
 <head> 
 		<title> Fetch Data From Database </title> 
@@ -210,7 +205,11 @@ $conn->close();
               <th> Telefon </th> 
               <th> Maaş </th> 
               <th> Part time </th>     
-			  <th> Sil </th> 
+              <th> Ders Programı Göster </th> 
+              <th> Müsaitlik Göster </th>
+              <th> Sil </th>  
+
+
 		</tr> 
 
 </section>
@@ -223,7 +222,10 @@ $conn->close();
 
         <?php
         foreach ($data as $row) {
-            if($row['çalışma_durumu'] == "full-time"){
+
+            $calisma_durumu = $row["çalışma_durumu"];
+            
+
                 echo "<tr>";
                 echo "<td><a href = 'full_time_ogretmen_ders_programı.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . $row["öğretmen_id"]  . "</a></td>";
                 echo "<td>" . $row["isim"] . "</td>";
@@ -234,9 +236,14 @@ $conn->close();
                 echo "<td>" . $row["telefon"] . "</td>";
                 echo "<td>" . $row["maaş"] . "</td>";
                 echo "<td>" . $row["çalışma_durumu"] . "</td>";
+
+                echo "<td><a href = 'full_time_ogretmen_ders_programı.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . "Program"  . "</a></td>";
+                echo "<td><a href = 'ogretmen_musait_zamanlar_programi.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
                 echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
                 echo "</tr>";
-            }
+            
+
+
         }
         ?>
     </table>

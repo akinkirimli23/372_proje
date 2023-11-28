@@ -10,22 +10,22 @@ if ($conn->connect_error) {
     die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
 }
 
-if (isset($_GET['öğretmen_id'])) {
+if (isset($_GET['id'])) {
     // Retrieve the id from the URL parameter
-    $öğretmen_id = $_GET['öğretmen_id'];
+    $id = $_GET['id'];
 
     // Now you can use $id in your code
-   // echo "Selected öğretmen ID: " . $öğretmen_id;
+    echo "Selected öğrenci ID: " . $id;
 } else {
     // Handle the case where 'id' is not set in the URL
-   // echo "Student ID is not provided in the URL.";
+    echo "Student ID is not provided in the URL.";
 }
 
 $sql = "SELECT *
-        FROM öğretmen
-        JOIN dersler ON öğretmen.öğretmen_id = dersler.öğretmen_id  
+        FROM ögrenci_ders
+        JOIN dersler ON ögrenci_ders.ders_kodu = dersler.ders_kodu
         JOIN ders_gün_saat ON ders_gün_saat.ders_kodu = dersler.ders_kodu
-        WHERE öğretmen.öğretmen_id = '$öğretmen_id';";
+        WHERE ögrenci_ders.öğrenci_id = '$id';";
 
 
 $result = $conn->query($sql);
@@ -148,7 +148,7 @@ $conn->close();
                                                 <li> <a href="mezunlar.php">Mezunlarımız</a></li>
                                                 <li> <a href="Ogretmen.php">Öğretmen</a></li>
                                                
-                                                <li> <a href="Öğrenci.php">Öğrenci</a></li>
+                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
                                                 <li> <a href="idari_personel.php">İdari Personel</a></li>
                                                 <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                                                 <li> <a href="dersler.php">Dersler</a></li>
@@ -159,11 +159,14 @@ $conn->close();
             </div>
         </nav>
 
-      <h1>Öğretmenler</h1>
+     
     </section>
-    <br>
-    <br>
 
+
+        <section class="blog-content">
+            
+
+        </section>
 
 
 
@@ -173,8 +176,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Öğretmen Ders Programı</h1>
-        <br>
+        <h1>Öğrenci Ders Programı</h1>
         <br>
     </div>
     <body style="background-color:powderblue;">
