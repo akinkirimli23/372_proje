@@ -90,7 +90,7 @@
   }
 
   .text-box{
-    width: 90%;
+    width: 50%;
     position: absolute;
     color: #b94c12;
     top: 60%;
@@ -104,26 +104,29 @@
 
   }
 
-  .text-box p{
-    margin: 10px 0 40px;
-    font-size: 20px;
-  }
+ 
 
   .hero-btn{
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    border: 1px  solid  #060505 ;
-    padding: 12px 34px;
-    font-size: 13px;
+    border: 0px  solid  #060505 ;
+    padding: 0px px;
+    font-size: 8px;
     background: transparent;
     position: relative;
     cursor: pointer;
   }
 
   .hero-btn:hover{
-    border: 1px solid rgb(11, 8, 1);
+    border: 0px solid rgb(11, 8, 1);
     background: rgb(0, 255, 204);
+    transition: 0.75s;
+  }
+
+  .hero-btn h1:hover{
+    border: 0px solid rgb(11, 8, 1);
+    background: rgb(208, 0, 255);
     transition: 0.75s;
   }
 
@@ -356,7 +359,7 @@
 
 
   .sub-header h1{
-    margin-top: 100px;
+    margin-top: 50px;
   }
 
 
