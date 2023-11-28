@@ -105,12 +105,12 @@ $conn->close();
             </div>
         </nav>
 
-      
+      <h1>DERSLER</h1>
     </section>
 
     <section class="blog-content">
 
-    <h1>Dersler</h1>
+<h1>Ders Girişi</h1>
 
 </section>
 

@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+$dbname = "db_proje_v4";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -130,7 +130,7 @@ $conn->close();
             </div>
         </nav>
 
-      <h1>Ogretmenler</h1>
+      <h1>Öğretmenler</h1>
     </section>
 
 
@@ -192,7 +192,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Oğretmen Verileri</h1>
+        <h1>Öğretmen Verileri</h1>
         <br>
     </div>
     <body style="background:powderblue;">
@@ -201,7 +201,7 @@ $conn->close();
 	<tr> 
 		
 		</tr> 
-			  <th> Ogretmen ID </th> 
+			  <th> Öğretmen ID </th> 
 			  <th> İsim </th> 
 			  <th> Soy isim </th> 
 			  <th> Yaş </th> 
@@ -223,8 +223,7 @@ $conn->close();
 
         <?php
         foreach ($data as $row) {
-            $calisma_durumu = $row["çalışma_durumu"];
-            if($calisma_durumu == "full time"){
+            if($row['çalışma_durumu'] == "full-time"){
                 echo "<tr>";
                 echo "<td><a href = 'full_time_ogretmen_ders_programı.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . $row["öğretmen_id"]  . "</a></td>";
                 echo "<td>" . $row["isim"] . "</td>";
@@ -235,10 +234,9 @@ $conn->close();
                 echo "<td>" . $row["telefon"] . "</td>";
                 echo "<td>" . $row["maaş"] . "</td>";
                 echo "<td>" . $row["çalışma_durumu"] . "</td>";
-                echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+                echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
                 echo "</tr>";
             }
-
         }
         ?>
     </table>
