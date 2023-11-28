@@ -238,7 +238,7 @@ $conn->close();
                 echo "<td>" . $row["çalışma_durumu"] . "</td>";
 
                 echo "<td><a href = 'full_time_ogretmen_ders_programı.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . "Program"  . "</a></td>";
-                echo "<td><a href = 'müsaitlik.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
+                echo "<td><a href = 'ogretmen_musait_zamanlar_programi.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
                 echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
                 echo "</tr>";
             
