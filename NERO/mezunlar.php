@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v4";
+$dbname = "db_proje_v3";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -186,7 +186,7 @@ $conn->close();
               <th> Adres </th> 
               <th> Telefon </th> 
               <th> Şirket İsmi </th> 
-
+              <th> Sil </th> 
 
 		</tr> 
 
@@ -203,6 +203,8 @@ $conn->close();
             echo "<td>" . $row["adres"] . "</td>";
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["şirket_isim"] . "</td>";
+            
+            echo "<td><a href='mezunlar_delete.php ? id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
 
             echo "</tr>";
         }

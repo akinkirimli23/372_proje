@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v4";
+$dbname = "db_proje_v3";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -211,7 +211,7 @@ $conn->close();
               <th> Adres </th>
               <th> Telefon </th> 
               <th> ünvan </th>     
-			  
+              <th> Sil </th> 
 		</tr> 
 
 </section>
@@ -221,7 +221,6 @@ $conn->close();
 
 </body>
 	
-
         <?php
         foreach ($data as $row) {
             echo "<tr>";
@@ -233,15 +232,11 @@ $conn->close();
             echo "<td>" . $row["adres"] . "</td>";
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["ünvan"] . "</td>";
-            
+            echo "<td><a href='veli_delete.php ? Öğrenci_id=" . $row["Öğrenci_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+
             echo "</tr>";
         }
         ?>
-
-
-
-
-
 
     </table>
 </body>

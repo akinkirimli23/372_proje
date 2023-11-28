@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v4";
+$dbname = "db_proje_v3";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -168,7 +168,7 @@ $conn->close();
               <th> Telefon </th> 
               <th> Maaş </th> 
               <th> Çalışma Durumu </th> 
-
+              <th> Sil </th> 
 
 		</tr> 
 
