@@ -100,7 +100,6 @@ $conn->close();
         flex: 1;
         width: 50%;
         height: 100%;
-        min-width: 200px;
         margin-right: 10px;
     }
 
@@ -261,10 +260,8 @@ $conn->close();
     <form method="POST" action="öğrenci_ders_insert.php" enctype="multipart/form-data">
      
 
-        <label for="öğrenci_id">öğrenci_id:</label>
         <input type="number" name="öğrenci_id" id="öğrenci_id" placeholder="Lütfen öğrenci_id giriniz" required>
 
-        <label for="ders_kodu">ders_kodu:</label>
         <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen ders_kodu giriniz" required>
 
         <br>

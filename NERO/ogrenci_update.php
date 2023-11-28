@@ -2,7 +2,6 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
 if ($conn->connect_error) {
