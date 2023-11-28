@@ -210,7 +210,7 @@ $conn->close();
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["şirket_isim"] . "</td>";
             
-            echo "<td><a href='mezunlar_delete.php ? id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+            echo "<td><a href='mezunlar_delete.php ? id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
 
             echo "</tr>";
         }

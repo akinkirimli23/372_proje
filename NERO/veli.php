@@ -237,7 +237,7 @@ $conn->close();
             echo "<td>" . $row["adres"] . "</td>";
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["ünvan"] . "</td>";
-            echo "<td><a href='veli_delete.php ? Öğrenci_id=" . $row["Öğrenci_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+            echo "<td><a href='veli_delete.php ? Öğrenci_id=" . $row["Öğrenci_id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
 
             echo "</tr>";
         }
