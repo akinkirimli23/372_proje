@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v4";
+$dbname = "db_proje_v3";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -109,43 +109,36 @@ $conn->close();
 
 
 
-    <section class="sub-header">
+    <section class="sub-header">    
         
         <nav>
             
-            <a href="index.html"><img src="Resim/home.png" alt=""></a>
+            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
                                                 <li> <a href="veli.php">Velilerimiz</a></li>
                                                 <li> <a href="mezunlar.php">Mezunlarımız</a></li>
                                                 <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                               
+                                                <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
                                                 <li> <a href="ogrenci.php">Öğrenci</a></li>
                                                 <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="idari_personel_part_time.php">idariPersonel</a></li>
                                                 <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                                                 <li> <a href="dersler.php">Dersler</a></li>
-
-
                     </ul>
             </div>
         </nav>
 
+      <h1>Ogretmenler</h1>
     </section>
 
 
         <section class="blog-content">
-
-        <h1>Öğretmenler</h1>
-        
-        </section>
-
-</body>
-
-
-
             
-            <section class="contact-us">
+        <section class="contact-us">
+
+
 
     <div class="contact-col">
 
@@ -187,7 +180,7 @@ $conn->close();
 
     <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-    <button type="submit" class="hero-btn red-btn">Gönder</button> 
+    <button type="submit">Gönder</button>
     </form>
 
 
@@ -202,7 +195,7 @@ $conn->close();
         <h1>Oğretmen Verileri</h1>
         <br>
     </div>
-    <body style="background:lightgray;">
+    <body style="background:powderblue;">
     
 	<table align="center" border="1px" style="width=100%; line-height:40px;"> 
 	<tr> 
@@ -230,27 +223,24 @@ $conn->close();
 
         <?php
         foreach ($data as $row) {
-            echo "<tr>";
-            echo "<td><a href>" . $row["öğretmen_id"] . "</a></td>";
-            echo "<td>" . $row["isim"] . "</td>";
-            echo "<td>" . $row["soy_isim"] . "</td>";
-            echo "<td>" . $row["yaş"] . "</td>";
-            echo "<td>" . $row["cinsiyet"] . "</td>";
-            echo "<td>" . $row["adres"] . "</td>";
-            echo "<td>" . $row["telefon"] . "</td>";
-            echo "<td>" . $row["maaş"] . "</td>";
-            echo "<td>" . $row["çalışma_durumu"] . "</td>";
-            
-            echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
-            echo "</tr>";
+            $calisma_durumu = $row["çalışma_durumu"];
+            if($calisma_durumu == "full time"){
+                echo "<tr>";
+                echo "<td><a href = 'full_time_ogretmen_ders_programı.php ? öğretmen_id=" . $row["öğretmen_id"] . "'>"  . $row["öğretmen_id"]  . "</a></td>";
+                echo "<td>" . $row["isim"] . "</td>";
+                echo "<td>" . $row["soy_isim"] . "</td>";
+                echo "<td>" . $row["yaş"] . "</td>";
+                echo "<td>" . $row["cinsiyet"] . "</td>";
+                echo "<td>" . $row["adres"] . "</td>";
+                echo "<td>" . $row["telefon"] . "</td>";
+                echo "<td>" . $row["maaş"] . "</td>";
+                echo "<td>" . $row["çalışma_durumu"] . "</td>";
+                echo "<td><a href='Ogretmen_delete.php ? öğretmen_id=" . $row["öğretmen_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+                echo "</tr>";
+            }
+
         }
         ?>
-
-
-
-
-
-
     </table>
 </body>
 </html>
