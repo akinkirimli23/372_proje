@@ -156,7 +156,7 @@ $conn->close();
             </div>
         </nav>
 
-      <h1>Part Time İdari Personeller</h1>
+      <h1>Part Time Temizlik Personelleri</h1>
     </section>
 
 
@@ -173,7 +173,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Part Time İdari Personel Müsait Zamanlar Programı</h1>
+        <h1>Part Time Temizlik Personeli Müsait Zamanlar Programı</h1>
         <br>
     </div>
     <body style="background-color:powderblue;">

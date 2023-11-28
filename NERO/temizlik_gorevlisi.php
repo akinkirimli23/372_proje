@@ -158,7 +158,7 @@ $conn->close();
         <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen Gün Adı giriniz" required>
 
         <label for="başlangıç_saat">Başlangıç Saat:</label>
-        <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
+        <input type="time" name="başlangıç_saati" id="başlangıç_saati" placeholder="Lütfen Başlangıç Saat giriniz" required>
 
         <label for="bitiş_saati">Bitiş Saati:</label>
         <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
@@ -198,6 +198,7 @@ $conn->close();
               <th> Telefon </th> 
               <th> Maaş </th> 
               <th> Çalışma Durumu </th> 
+              <th> Müsaitlik </th> 
               <th> Sil </th> 
 
 		</tr> 
@@ -216,6 +217,7 @@ $conn->close();
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["maaş"] . "</td>";
             echo "<td>" . $row["çalışma_durumu"] . "</td>";
+            echo "<td><a href = 'temizlik_gorevlisi_musait_zamanlar_programi.php ? temizlik_personeli_id=" . $row["temizlik_personeli_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
             echo "<td><a href='temizlik_gorevlisi_delete.php?temizlik_personeli_id=" . $row["temizlik_personeli_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
 
 
