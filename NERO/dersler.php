@@ -126,24 +126,24 @@ $conn->close();
     
         <form method="POST" action="dersler_insert.php" enctype="multipart/form-data">
     
-        <label for="ders_kodu">Ders Kodu:</label>
-        <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen ders_kodu giriniz" required>
-    
-    
-        <label for="aktiflik">Aktiflik:</label>
-        <input type="text" name="aktiflik" id="aktiflik" placeholder="Lütfen dersin aktiflik durumunu giriniz" required>
-    
-        <label for="ders_isim">Ders İsim:</label>
-        <input type="text" name="ders_isim" id="ders_isim" placeholder="Lütfen ders ismini giriniz" required>
+            <label for="ders_kodu">Ders Kodu:</label>
+            <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen ders_kodu giriniz" required>
         
-        <label for="öğretmen_id">Öğretmen Id:</label>
-        <input type="text" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required>
-    
-        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
-    
-        <button type="submit" class="hero-btn red-btn">Gönder</button> 
 
         
+            <label for="aktiflik">Aktiflik:</label>
+            <input type="text" name="aktiflik" id="aktiflik" placeholder="Lütfen dersin aktiflik durumunu giriniz" required>
+        
+            <label for="ders_isim">Ders İsim:</label>
+            <input type="text" name="ders_isim" id="ders_isim" placeholder="Lütfen ders ismini giriniz" required>
+            
+            <label for="öğretmen_id">Öğretmen Id:</label>
+            <input type="number" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required>
+        
+            <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+        
+            <button type="submit" class="hero-btn red-btn">Gönder</button> 
+
         </form>
         <br>
         <br><br>
