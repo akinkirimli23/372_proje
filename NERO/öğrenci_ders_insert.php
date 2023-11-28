@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+$dbname = "db_proje_v4";
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
 if ($conn->connect_error) {
@@ -10,12 +10,12 @@ if ($conn->connect_error) {
 }
 
 
-$öğrenci_id = $_POST['öğrenci_id'];
+
 $ders_kodu = $_POST['ders_kodu'];
+$öğrenci_id = $_POST['öğrenci_id'];
 
  
-
-$sql = "INSERT INTO ögrenci_ders (öğrenci_id,ders_kodu) VALUES ('$öğrenci_id', '$ders_kodu')";
+$sql = "INSERT INTO ögrenci_ders(ders_kodu,öğrenci_id ) VALUES ('$ders_kodu', '$öğrenci_id')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: ogrenci.php");

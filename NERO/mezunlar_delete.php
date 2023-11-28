@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+$dbname = "db_proje_v4";
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
 if ($conn->connect_error) {
@@ -29,6 +29,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;
 }
-
 
 ?>
