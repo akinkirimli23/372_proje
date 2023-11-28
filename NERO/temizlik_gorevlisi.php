@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+$dbname = "db_proje_v4";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -69,7 +69,7 @@ $conn->close();
 
     <section class="sub-header">
         <nav>
-            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
+            <a href="index.html"><img src="Resim/home.png" alt=""></a>
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
@@ -84,23 +84,22 @@ $conn->close();
                     </ul>
             </div>
         </nav>
-
-      <h1>Temizlik Gorevlisi</h1>
     </section>
 
 
-        <section class="blog-content">
-        
-        </section>
+    <section class="blog-content">
+
+<h1>Temizlik Gorevlileri</h1>
+
+</section>
 
 </body>
 
 
-<section class="blog-content">
-            
-            <section class="contact-us">
+
     
-    
+    <section class="contact-us">
+
 
 <div class="contact-col">
     <form method="POST" action="temizlik_gorevlisi_insert.php" enctype="multipart/form-data">
@@ -139,9 +138,36 @@ $conn->close();
         <br>
         <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-        <button type="submit">Gönder</button>
+        <button type="submit" class="hero-btn red-btn">Gönder</button> 
     </form>
 </div>
+
+<div class="contact-col">
+    <form method="POST" action="part_time_temizlik_personeli_gün_ve_saat_insert.php" enctype="multipart/form-data">
+     
+
+    
+        <label for="temizlik_personeli_id">Temizlik Personel ID:</label>
+        <input type="number" name="temizlik_personeli_id" id="temizlik_personeli_id" placeholder="Lütfen İdari Personel ID giriniz" required>
+
+        <label for="gün_adı">Gün Adı:</label>
+        <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen Gün Adı giriniz" required>
+
+        <label for="başlangıç_saat">Başlangıç Saat:</label>
+        <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
+
+        <label for="bitiş_saati">Bitiş Saati:</label>
+        <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
+
+        
+        <br>
+        <br>
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+
+        <button type="submit" class="hero-btn red-btn">Gönder</button> 
+    </form>
+</div>
+
 
 
 
@@ -153,7 +179,7 @@ $conn->close();
         <h1>Temizlik Personeli Verileri</h1>
         <br>
     </div>
-    <body style="background-color:powderblue;">
+    <body style="background-color:lightgray;">
     
 	<table align="center" border="1px" style="width=100%; line-height:40px;"> 
 	<tr> 

@@ -10,12 +10,13 @@ if ($conn->connect_error) {
 }
 
 
-
-$ders_kodu = $_POST['ders_kodu'];
 $öğrenci_id = $_POST['öğrenci_id'];
-
+$başlangıç_saat = $_POST['başlangıç_saat'];
+$gün_adı = $_POST['gün_adı'];
+$bitiş_saati = $_POST['bitiş_saati'];
  
-$sql = "INSERT INTO ögrenci_ders(ders_kodu,öğrenci_id ) VALUES ('$ders_kodu', '$öğrenci_id')";
+
+$sql = "INSERT INTO öğrenci_gün_ve_saat (öğrenci_id,başlangıç_saat,gün_adı,bitiş_saati) VALUES ('$isim', '$başlangıç_saat', '$gün_adı', '$bitiş_saati')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: ogrenci.php");

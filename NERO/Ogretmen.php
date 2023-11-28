@@ -2,7 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+$dbname = "db_proje_v4";
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -113,7 +113,7 @@ $conn->close();
         
         <nav>
             
-            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
+            <a href="index.html"><img src="Resim/home.png" alt=""></a>
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
@@ -131,15 +131,21 @@ $conn->close();
             </div>
         </nav>
 
-      <h1>Ogretmenler</h1>
     </section>
 
 
         <section class="blog-content">
+
+        <h1>Öğretmenler</h1>
+        
+        </section>
+
+</body>
+
+
+
             
-        <section class="contact-us">
-
-
+            <section class="contact-us">
 
     <div class="contact-col">
 
@@ -181,7 +187,7 @@ $conn->close();
 
     <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-    <button type="submit">Gönder</button>
+    <button type="submit" class="hero-btn red-btn">Gönder</button> 
     </form>
 
 
@@ -196,7 +202,7 @@ $conn->close();
         <h1>Oğretmen Verileri</h1>
         <br>
     </div>
-    <body style="background:powderblue;">
+    <body style="background:lightgray;">
     
 	<table align="center" border="1px" style="width=100%; line-height:40px;"> 
 	<tr> 
