@@ -123,16 +123,16 @@ $conn->close();
         <br>
         <br>
         <label for="adres">Adres:</label>
-    <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
+        <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
-    <label for="telefon">Telefon:</label>
-    <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
 
-    <label for="maaş">Maaş:</label>
-    <textarea rows="4" name="maaş" id="maaş" placeholder="Lütfen maaş giriniz" required></textarea>
+        <label for="maaş">Maaş:</label>
+        <input type="number" name="maaş" id="maaş" placeholder="Lütfen maaşınızı giriniz" required>
 
-    <label for="çalışma_durumu">Çalışma Durumu:</label>
-    <input type="text" name="çalışma_durumu" id="çalışma_durumu" placeholder="Lütfen çalışma durumu giriniz" required>
+        <label for="çalışma_durumu">Çalışma Durumu:</label>
+        <input type="text" name="çalışma_durumu" id="çalışma_durumu" placeholder="Lütfen çalışma durumu giriniz" required>
 
         <br>
         <br>
