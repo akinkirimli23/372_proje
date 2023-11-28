@@ -104,12 +104,11 @@ $conn->close();
         </nav>
 
       <h1>Öğrenciler</h1>
+      <h1>Öğrenci İnsert</h1>
     </section>
 
 
-        <section class="blog-content">
-        
-        </section>
+
 
 </body>
 
@@ -117,11 +116,43 @@ $conn->close();
 <section class="blog-content">
             
             <section class="contact-us">
-    
-    
-
+    <div style="text-align: center;">
+            <h1>Öğrenci İnsert</h1>
+            <br>
+    </div>
 <div class="contact-col">
+
+
     <form method="POST" action="ogrenci_insert.php" enctype="multipart/form-data">
+     
+        <label for="isim">Ad:</label>
+        <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
+
+        <label for="soy_isim">Soyad:</label>
+        <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required>
+
+        <label for="yaş">Yaş:</label>
+        <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required>
+
+        <label for="cinsiyet">Cinsiyet:</label>
+        <select name="cinsiyet" id="cinsiyet" required>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+            <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+        </select>
+        <br>
+        <br>
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+
+        <button type="submit">Gönder</button>
+    </form>
+</div>
+    <div style="text-align: center;">
+            <h1>Öğrenci Update</h1>,      
+            <br>
+    </div>
+<div class="contact-col">
+    <form method="POST" action="ogrenci_update.php" enctype="multipart/form-data">
      
 
     
@@ -146,8 +177,11 @@ $conn->close();
 
         <button type="submit">Gönder</button>
     </form>
-</div>
-
+</div>  
+    <div style="text-align: center;">
+            <h1>Öğrenci Ders İnsert</h1>
+            <br>
+    </div>
 <div class="contact-col">
     <form method="POST" action="öğrenci_ders_insert.php" enctype="multipart/form-data">
      
