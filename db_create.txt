@@ -115,7 +115,7 @@ create table Öğrenci_Gün_ve_Saat (
 	başlangıç_saat		time			not null ,
 	gün_adı				varchar(30)		not null,
 	bitiş_saati			time			not null,
-    PRIMARY KEY(öğrenci_id,başlangıç_saat),
+    PRIMARY KEY(öğrenci_id,başlangıç_saat ,gün_adı),
     
     constraint Fk4
 	 foreign key (öğrenci_id) references Öğrenci(id)

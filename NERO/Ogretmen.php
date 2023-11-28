@@ -29,40 +29,13 @@ $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
-      //  echo "ozi"
-      //  echo $data[0];
+
     }
 }
 
-/*$size = count($data);
-for($x = 0; $x < $size; $x++){
-    if($data[$x]["yaş"] == "31"){
-        if (!empty($data)) {
-            $firstRow = $data[$x];
-            echo "<tr>";
-            echo "<td>" . $firstRow["öğretmen_id"] . "</td>" ;    
-            echo "<td>" . $firstRow["isim"] . "</td>";
-            echo "<td>" . $firstRow["soy_isim"] . "</td>";
-            echo "<td>" . $firstRow["yaş"] . "</td>";
-            echo "<td>" . $firstRow["cinsiyet"] . "</td>";
-            echo "<td>" . $firstRow["adres"] . "</td>";
-            echo "<td>" . $firstRow["telefon"] . "</td>";
-            echo "<td>" . $firstRow["maaş"] . "</td>";
-            echo "<td>" . $firstRow["çalışma_durumu"] . "</td>";
-            echo "</tr>";
-            echo "</br>"; 
-        } else {
-            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
-        }
-    }
-}*/
 $conn->close();
 
 ?>  
-
-
-
-
 
 <!DOCTYPE html>
 <html> 
@@ -99,14 +72,10 @@ $conn->close();
         
     </style>
 
-
 </head>
 
 
-
 <body>  
-
-
 
 
     <section class="sub-header">    
