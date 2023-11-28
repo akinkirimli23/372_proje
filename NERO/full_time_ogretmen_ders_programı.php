@@ -15,10 +15,10 @@ if (isset($_GET['öğretmen_id'])) {
     $öğretmen_id = $_GET['öğretmen_id'];
 
     // Now you can use $id in your code
-    echo "Selected öğretmen ID: " . $öğretmen_id;
+   // echo "Selected öğretmen ID: " . $öğretmen_id;
 } else {
     // Handle the case where 'id' is not set in the URL
-    echo "Student ID is not provided in the URL.";
+   // echo "Student ID is not provided in the URL.";
 }
 
 $sql = "SELECT *
@@ -161,12 +161,9 @@ $conn->close();
 
       <h1>Öğretmenler</h1>
     </section>
+    <br>
+    <br>
 
-
-        <section class="blog-content">
-            
-
-        </section>
 
 
 
@@ -177,6 +174,7 @@ $conn->close();
 	<body> 
     <div style="text-align: center;">
         <h1>Öğretmen Ders Programı</h1>
+        <br>
         <br>
     </div>
     <body style="background-color:powderblue;">

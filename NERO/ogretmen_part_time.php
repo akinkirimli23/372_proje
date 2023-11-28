@@ -2,7 +2,10 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "db_proje_v3";
+
+$dbname = "db_proje_v4";
+
+
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -113,26 +116,30 @@ $conn->close();
         
         <nav>
             
-            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
+
+        <a href="index.html"><img src="Resim/home.png" alt=""></a>
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                                                <li> <a href="veli.php">Velilerimiz</a></li>
-                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                               
-                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
-                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
-                                                <li> <a href="idari_personel_part_time.php">idariPersonel</a></li>
-                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                                                <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="veli.php">Velilerimiz</a></li>
+                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                        <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
+                        <li> <a href="ogrenci.php">Öğrenci</a></li>
+                        <li> <a href="idari_personel.php">İdari Personel</a></li>
+                        <li> <a href="idari_personel_part_time.php">idari Personel Part Time</a></li>
+                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                        <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="giderler.php">Giderler</a></li>    
 
 
                     </ul>
             </div>
         </nav>
 
-      <h1>Ogretmenler</h1>
+
+      <h1>Ogretmenler Part Time</h1>
+
     </section>
 
 
@@ -147,7 +154,6 @@ $conn->close();
     <form method="POST" action="Ogretmen_insert.php" enctype="multipart/form-data">
 
    
-
 
     <label for="ad">Ad:</label>
     <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
@@ -244,11 +250,6 @@ $conn->close();
 
         }
         ?>
-
-
-
-
-
 
     </table>
 </body>
