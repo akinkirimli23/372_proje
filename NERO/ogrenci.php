@@ -67,14 +67,55 @@ $conn->close();
         height: 100%;
         text-align: center;
 
-       
+        
 
         }
 
         
     </style>
 
+<style>
+    .contact-col2 {
+        width: 100%;
+            height: 35  vh;
+            display: flex;
+            justify-content: center;
+         
+            overflow: hidden;
+    }
 
+    .contact-col2 label,
+    .contact-col2 input,
+    .contact-col2 select {
+        margin-bottom: 20px;
+
+        min-height: 50px;
+        max-height: 100px   ;
+        
+        overflow: hidden;
+        width: 450px;
+    }
+
+    .contact-col2 label {
+        flex: 1;
+        width: 50%;
+        height: 100%;
+        min-width: 200px;
+        margin-right: 10px;
+    }
+
+    .contact-col2 input,
+    .contact-col2 select {
+        flex: 2;
+
+    }
+
+    .contact-col2 button {
+        flex: 1;
+
+        
+    }
+</style>
 
 
 </head>
@@ -104,30 +145,32 @@ $conn->close();
         </nav>
 
 
+      <h1>Öğrenciler</h1>
+
     </section>
 
-
-    <section class="blog-content">
-
-<h1>Öğrenciler</h1>
-
-</section>
 
 
 </body>
 
 
 
-
+<section class="blog-content">
+            
+            <section class="contact-us">
     
-    <section class="contact-us">
+    
+            <h2>Öğrenci İnsert
+            <br>
+               <br>
 
 
+            </h2>
 <div class="contact-col">
-
-
     <form method="POST" action="ogrenci_insert.php" enctype="multipart/form-data">
      
+
+    
         <label for="isim">Ad:</label>
         <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
 
@@ -153,41 +196,67 @@ $conn->close();
         <br>
     </form>
 </div>
-    <div style="text-align: center;">
-            <h1>Öğrenci Update</h1>,      
-            <br>
-    </div>
-<div class="contact-col">
+            <h2>Öğrenci Update
+               <br>
+               <br>
+
+            </h2>
+
+            
+            <div class="contact-col2">
     <form method="POST" action="ogrenci_update.php" enctype="multipart/form-data">
-     
 
-    
+        <label for="id">ID:</label>
+        <input type="text" name="id" id="id" placeholder="Lütfen ID giriniz" required value="Default Id">
+        <br>
         <label for="isim">Ad:</label>
-        <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
+        <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required value="Default Ad">
 
+        <label for="yeni_isim">Yeni Ad:</label>
+        <input type="text" name="yeni_isim" id="yeni_isim" placeholder="Lütfen yeni adınızı giriniz" required value="Default Yeni Ad">
+        <br>
         <label for="soy_isim">Soyad:</label>
-        <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required>
+        <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required value="Default Soyad">
 
+        <label for="yeni_soy_isim">Yeni Soyad:</label>
+        <input type="text" name="yeni_soy_isim" id="yeni_soy_isim" placeholder="Lütfen yeni soyadınızı giriniz" required value="Default Yeni Soyad">
+        <br>
         <label for="yaş">Yaş:</label>
-        <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required>
+        <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required value=0>
 
+        <label for="yeni_yaş">Yeni Yaş:</label>
+        <input type="number" name="yeni_yaş" id="yeni_yaş" placeholder="Lütfen yeni yaşınızı giriniz" required  value=0>
+        <br>
         <label for="cinsiyet">Cinsiyet:</label>
         <select name="cinsiyet" id="cinsiyet" required>
+            <option value="Default Cinsiyet">Default Cinsiyet</option>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+        </select>
+
+        <label for="yeni_cinsiyet">Yeni Cinsiyet:</label>
+        <select name="yeni_cinsiyet" id="yeni_cinsiyet" required>
+            <option value="Default Yeni Cinsiyet">Default Yeni Cinsiyet</option>
             <option value="erkek">Erkek</option>
             <option value="kadin">Kadın</option>
             <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
         </select>
         <br>
-        <br>
+
         <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
         <button type="submit">Gönder</button>
+        <br>
+        <br>
     </form>
-</div>  
-    <div style="text-align: center;">
-            <h1>Öğrenci Ders İnsert</h1>
+</div>
+
+
+            <h2>Öğrenci Ders İnsert
             <br>
-    </div>
+               <br>
+
+            </h2>
 <div class="contact-col">
     <form method="POST" action="öğrenci_ders_insert.php" enctype="multipart/form-data">
      
