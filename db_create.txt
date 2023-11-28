@@ -195,4 +195,3 @@ create table Giderler (
     primary key (yıl, ay , hafta)
 );
 
-

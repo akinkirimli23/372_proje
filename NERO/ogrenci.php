@@ -18,29 +18,9 @@ $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
-      //  echo "ozi"
-      //  echo $data[0];
     }
 }
 
-$size = count($data);
-for($x = 0; $x < $size; $x++){
-    if($data[$x]["yaş"] == "31"){
-        if (!empty($data)) {
-            $row = $data[$x];
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>" ;    
-            echo "<td>" . $row["isim"] . "</td>";
-            echo "<td>" . $row["soy_isim"] . "</td>";
-            echo "<td>" . $row["yaş"] . "</td>";
-            echo "<td>" . $row["cinsiyet"] . "</td>";
-            echo "</tr>";
-            echo "</br>"; 
-        } else {
-            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
-        }
-    }
-}
 $conn->close();
 ?>  
 
@@ -66,9 +46,6 @@ $conn->close();
         width: 100%;
         height: 100%;
         text-align: center;
-
-        
-
         }
 
         
@@ -292,8 +269,8 @@ $conn->close();
      
 
     
-        <label for="öğrenci_id">Öğrenci ID:</label>
-        <input type="number" name="öğrenci_id" id="öğrenci_id" placeholder="Lütfen Öğrenci ID giriniz" required>
+        <label for="id">Öğrenci ID:</label>
+        <input type="number" name="id" id="id" placeholder="Lütfen Öğrenci ID giriniz" required>
 
         <label for="başlangıç_saat">Başlangıç Saat:</label>
         <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
@@ -313,7 +290,7 @@ $conn->close();
         <button type="submit" class="hero-btn red-btn">Gönder</button> 
     </form>
 </div>
-
+</div>
 
 
 
@@ -340,20 +317,28 @@ $conn->close();
 			  <th> Yaş </th> 
               <th> Cinsiyet </th> 
               <th> Sil </th> 
+              <th> Ogrenci Ders Programı </th> 
+              <th> Ogrenci Müsait Zaman Programı </th> 
 		</tr> 
 
+        </section>
+        </section>
 
+
+
+</body>
 
         <?php
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<td><a href='öğrenci_ders_programı.php?id=" . $row["id"] . "'>"  . $row["id"]  . "</a></td>";
+            echo "<td>" . $row["id"]  . "</td>";
             echo "<td>" . $row["isim"] . "</td>";
             echo "<td>" . $row["soy_isim"] . "</td>";
             echo "<td>" . $row["yaş"] . "</td>";
             echo "<td>" . $row["cinsiyet"] . "</td>";
             echo "<td><a href='ogrenci_delete.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
-
+            echo "<td> <a href = 'öğrenci_ders_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";
+            echo "<td> <a href = 'ogrenci_musait_zamanlar_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";    
             echo "</tr>";
         }
         ?>      
