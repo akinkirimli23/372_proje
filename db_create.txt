@@ -48,7 +48,7 @@ PRIMARY KEY(öğretmen_id, gün_adı, başlangıç_saati ) ,
 
 constraint Fk1
 foreign key (öğretmen_id) references Öğretmen(öğretmen_id)
-on delete restrict on update cascade
+on delete cascade on update cascade
 
 );
 
@@ -62,7 +62,7 @@ PRIMARY KEY(temizlik_personeli_id, gün_adı, başlangıç_saati ) ,
 
 constraint Fk2
 foreign key (temizlik_personeli_id) references Temizlik_Personeli(temizlik_personeli_id)
-on delete restrict on update cascade
+on delete cascade on update cascade
 );
 
 
@@ -75,7 +75,7 @@ bitiş_saati time,
 PRIMARY KEY(idari_personel_id, gün_adı, başlangıç_saati ) ,
 constraint Fk3
 foreign key (idari_personel_id) references idari_Personel(idari_personel_id)
-on delete restrict on update cascade
+on delete cascade on update cascade
 );
 
 
@@ -115,12 +115,12 @@ create table Öğrenci_Gün_ve_Saat (
 	başlangıç_saat		time			not null ,
 	gün_adı				varchar(30)		not null,
 	bitiş_saati			time			not null,
-    PRIMARY KEY(öğrenci_id,başlangıç_saat ,gün_adı),
+    PRIMARY KEY(öğrenci_id,başlangıç_saat),
     
     constraint Fk4
 	 foreign key (öğrenci_id) references Öğrenci(id)
 	 
-	on delete  restrict on update cascade 
+	on delete  cascade on update cascade 
 );
 
 create table Dersler (
@@ -132,7 +132,7 @@ create table Dersler (
 	constraint Fk5
 	 foreign key (öğretmen_id) references Öğretmen(öğretmen_id)
 	
-	on delete  restrict on update cascade 
+	on delete  set null on update cascade 
 );
 
 create table Ders_Gün_Saat (
@@ -145,32 +145,40 @@ create table Ders_Gün_Saat (
 	constraint Fk6
 	 foreign key (ders_kodu) references Dersler(ders_kodu)
 	 
-	on delete  restrict on update cascade 
+	on delete  cascade on update cascade 
 );
 
 create table Malzemeler (
-	ders_kodu			varchar(30)		not null primary key,
-	hesap_makinesi		int 	not null,
-	ingilizce_sozluk	int 	not null,
-	almanca_sozluk		int		not null,
-	satranc_takimi		int		not null,
-	bilgisayar			int		not null,
-	güç_kaynağı			int		not null,
-	
+	malzeme_id			int				not null primary key AUTO_INCREMENT,
+	malzeme_isim		varchar(30)		not null,
+	malzeme_stok		int				not null
+);
+
+create table Malzeme_ders (
+	ders_kodu			varchar(30)		not null ,
+	malzeme_id			int				not null ,
+	primary key (ders_kodu , malzeme_id),
 	constraint Fk7
 	 foreign key (ders_kodu) references Dersler(ders_kodu)
-	 on delete  restrict on update cascade 
+	on delete  cascade on update cascade,
+    
+	constraint Fk10
+	 foreign key (malzeme_id) references Malzemeler(malzeme_id)
+	 on delete  cascade on update cascade 
 );
 
 create table Ögrenci_Ders (
 	ders_kodu			varchar(30) 	not null,
 	öğrenci_id 			int		not null,
-    PRIMARY KEY (ders_kodu, öğrenci_id),
+    	PRIMARY KEY (ders_kodu, öğrenci_id),
+	
 	constraint Fk8
-	foreign key (ders_kodu) references Dersler(ders_kodu),
-    constraint Fk9
+	foreign key (ders_kodu) references Dersler(ders_kodu)
+	on delete  cascade on update cascade,
+
+	constraint Fk9
 	foreign key (öğrenci_id) references Öğrenci(id)
-    on delete  restrict on update cascade
+    	on delete  cascade on update cascade
 ); 
 
 create table Giderler (
@@ -186,5 +194,4 @@ create table Giderler (
     
     primary key (yıl, ay , hafta)
 );
-
 
