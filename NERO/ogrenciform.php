@@ -87,7 +87,7 @@ $sql = "SELECT * FROM öğrenci" .  "$where;";
 $result = $conn->query($sql);
 
 $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
-echo $sql;
+
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
@@ -125,31 +125,75 @@ if ($result->num_rows > 0) {
 */
 
 ?>
-
 <!DOCTYPE html>
-<html> 
-    <head> 
-            <title> Fetch Data From Database </title> 
-        </head> 
-        <body> 
-        <div style="text-align: center;">
-            <h1>Öğrenci Verileri</h1>
-            <br>
-        </div>
-        <body style="background-color:lightgray;">
-        
-        <table align="center" border="1px" style="width=100%; line-height:40px;"> 
-        <tr> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+        <a href="index.html"><img src="Resim/home.png" alt=""></a>
+
+            <div class="nav-links">
+                <div>
+                <li> <a href="filtre.php">Filtre</a></li>
+            </div>
+                    <ul>
+                        <li> <a href="index.html">HOME</a></li>
+                        <li> <a href="veli.php">Velilerimiz</a></li>
+                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                        <li> <a href="ogrenci.php">Öğrenci</a></li>
+                        <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                
+
+                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                        <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="giderler.php">Giderler</a></li>
+                        <li> <a href="malzemeler.php">Malzemeler</a></li>         
+
+
+
+                    </ul>
+            </div>
             
-            </tr> 
-                <th>  ID </th> 
-                <th> İsim </th> 
-                <th> Soy isim </th> 
-                <th> Yaş </th> 
-                <th> Cinsiyet </th> 
-            </tr> 
+        </nav>
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dynamic Form</title>
 
 
+            <h1>Öğrenci Form</h1>
+            </section>
+        </body>
+
+        <section class="sekmeler-us">
+
+
+    <br>
+
+    
+    <section class="blog-content_ogrenciform">
+    <table align="center" border="1px" style="width: 100%; line-height: 40px;">
+      <tr>
+        <!-- Tablo başlıkları -->
+        <th>ID</th>
+        <th>İsim</th>
+        <th>Soy isim</th>
+        <th>Yaş</th>
+        <th>Cinsiyet</th>
+      </tr>
+      <!-- Tablo içeriği buraya gelecek -->
+   
+ 
+      </section>
+        </section>
 
             <?php
             foreach ($data as $row) {
@@ -161,7 +205,10 @@ if ($result->num_rows > 0) {
                 echo "<td>" . $row["cinsiyet"] . "</td>";
                 echo "</tr>";
             }
-            ?>      
-        </table>
+            ?> 
+               
+              
+              </section>
+              </table> 
     </body>
 </html>

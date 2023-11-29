@@ -73,16 +73,18 @@ $conn->close();
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                                                <li> <a href="veli.php">Velilerimiz</a></li>
-                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                                <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
-                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
-                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
-                                                <li> <a href="idari_personel_part_time.php">idariPersonel</a></li>
-                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                                                <li> <a href="dersler.php">Dersler</a></li>
-                                                <li> <a href="giderler.php">Giderler</a></li>        
+                    <li> <a href="index.html">HOME</a></li>
+                        <li> <a href="veli.php">Velilerimiz</a></li>
+                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                        <li> <a href="ogrenci.php">Öğrenci</a></li>
+                        <li> <a href="idari_personel.php">İdari Personel</a></li>
+                      
+                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                        <li> <a href="dersler.php">Dersler</a></li>
+                        <li> <a href="giderler.php">Giderler</a></li>
+                        <li> <a href="malzeme.php">Malzemeler</a></li>         
+
 
                     </ul>
             </div>
@@ -91,84 +93,91 @@ $conn->close();
 
     </section>
 
+    </body>
 
-    <section class="blog-content">
+   
+    <section class="sekmeler-us">
 
-
-</section>
-
-</body>
-
-
-
+<section class="blog-content">
     
-    <section class="contact-us">
+<h2>Temizlik Görevlisi İnsert  </h2>
+    <br>
+       <br>
 
 
 <div class="contact-col">
     <form method="POST" action="temizlik_gorevlisi_insert.php" enctype="multipart/form-data">
         
    
-        <label for="isim">Ad:</label>
+        <label for="isim"><b>Ad:</b></label>
         <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
 
-        <label for="soy_isim">Soyad:</label>
+        <label for="soy_isim"><b>Soyad:</b></label>
         <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required>
 
-        <label for="yaş">Yaş:</label>
+        <label for="yaş"><b>Yaş:</b></label>
         <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required>
 
-        <label for="cinsiyet">Cinsiyet:</label>
+        <label for="cinsiyet"><b>Cinsiyet:</b></label>
         <select name="cinsiyet" id="cinsiyet" required>
-            <option value="erkek">Erkek</option>
-            <option value="kadin">Kadın</option>
+            <option value="erkek"><b>Erkek</b></option>
+            <option value="kadin"><b>Kadın</b></option>
             <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
         </select>
         <br>
         <br>
-        <label for="adres">Adres:</label>
-        <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
-        <label for="telefon">Telefon:</label>
-        <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
+        <label for="adres"><b>Adres:</b></label>
+    <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
-        <label for="maaş">Maaş:</label>
-        <input type="number" name="maaş" id="maaş" placeholder="Lütfen maaşınızı giriniz" required>
+    <label for="telefon"><b>Telefon:</b></label>
+    <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
 
-        <label for="çalışma_durumu">Çalışma Durumu:</label>
-        <input type="text" name="çalışma_durumu" id="çalışma_durumu" placeholder="Lütfen çalışma durumu giriniz" required>
+    <label for="maaş"><b>Maaş:</b></label>
+    <textarea rows="4" name="maaş" id="maaş" placeholder="Lütfen maaş giriniz" required></textarea>
 
-        <br>
-        <br>
+    <label for="çalışma_durumu"><b>Çalışma Durumu:</b></label>
+    <input type="text" name="çalışma_durumu" id="çalışma_durumu" placeholder="Lütfen çalışma durumu giriniz" required>
+
+     <br>
         <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-        <button type="submit" class="hero-btn red-btn">Gönder</button> 
+        <button type="submit" class="hero-btn red-btn"><b>Gönder</b></button> 
     </form>
 </div>
+<br>
+<br>
+<h2>Temizlik Görevlisi Müsaitlik </h2>
+            <br>
+               <br>
+
+
 
 <div class="contact-col">
     <form method="POST" action="part_time_temizlik_personeli_gün_ve_saat_insert.php" enctype="multipart/form-data">
      
 
     
-        <label for="temizlik_personeli_id">Temizlik Personel ID:</label>
+        <label for="temizlik_personeli_id"><b>Temizlik Personel ID:</b></label>
         <input type="number" name="temizlik_personeli_id" id="temizlik_personeli_id" placeholder="Lütfen İdari Personel ID giriniz" required>
 
-        <label for="gün_adı">Gün Adı:</label>
+        <label for="gün_adı"><b>Gün Adı:</b></label>
         <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen Gün Adı giriniz" required>
 
-        <label for="başlangıç_saat">Başlangıç Saat:</label>
+
+        <label for="başlangıç_saati"><b>Başlangıç Saat:</b></label>
         <input type="time" name="başlangıç_saati" id="başlangıç_saati" placeholder="Lütfen Başlangıç Saat giriniz" required>
 
-        <label for="bitiş_saati">Bitiş Saati:</label>
+
+        <label for="bitiş_saati"><b>Bitiş Saati:</b></label>
         <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
 
         
-        <br>
+    
         <br>
         <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-        <button type="submit" class="hero-btn red-btn">Gönder</button> 
+        <button type="submit" class="hero-btn red-btn"><b>  Gönder</b></button> 
     </form>
 </div>
 
@@ -183,7 +192,7 @@ $conn->close();
         <h1>Temizlik Personeli Verileri</h1>
         <br>
     </div>
-    <body style="background-color:lightgray;">
+    <body style="background:powderblue;">
     
 	<table align="center" border="1px" style="width=100%; line-height:40px;"> 
 	<tr> 
@@ -217,6 +226,7 @@ $conn->close();
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["maaş"] . "</td>";
             echo "<td>" . $row["çalışma_durumu"] . "</td>";
+
             echo "<td><a href = 'temizlik_gorevlisi_musait_zamanlar_programi.php ? temizlik_personeli_id=" . $row["temizlik_personeli_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
             echo "<td><a href='temizlik_gorevlisi_delete.php?temizlik_personeli_id=" . $row["temizlik_personeli_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
 
