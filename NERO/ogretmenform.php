@@ -122,7 +122,7 @@ $sql = "SELECT * FROM öğretmen" .  "$where;";
 
 
 
-
+/*
 echo $sql;
 if ($conn->query($sql) === TRUE) {
     //header("Location: ogrenci.php");
@@ -131,6 +131,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;
 }
+*/
 
 
 $result = $conn->query($sql);
