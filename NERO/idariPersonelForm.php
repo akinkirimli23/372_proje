@@ -26,9 +26,10 @@ $çalışma_durumu = $_POST['çalışma_durumu'];
 
 
  
-$where = " WHERE ";
+$where = "  ";
 $x = 0;
 if($idari_personel_id != 0){
+    $where .= " WHERE ";
     $where .= "idari_personel_id $idari_personel_id_filtre $idari_personel_id";
     $x++;
 }
@@ -37,6 +38,9 @@ if($isim != "Default"){
     if($x!=0){
         $where .= " AND ";
     }
+    else{
+        $where .= "WHERE ";
+    }
     $where .= "isim = '$isim'";
     $x++;
 }
@@ -44,6 +48,8 @@ if($isim != "Default"){
 if($soy_isim != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "soy_isim = '$soy_isim'";
     $x++;
@@ -52,6 +58,8 @@ if($soy_isim != "Default"){
 if($yaş != 0){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "yaş $yaş_filtre $yaş";
     $x++;
@@ -60,6 +68,8 @@ if($yaş != 0){
 if($cinsiyet != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "cinsiyet = '$cinsiyet'";
     $x++;
@@ -68,6 +78,8 @@ if($cinsiyet != "Default"){
 if($adres != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "adres = '$adres'";
     $x++;
@@ -76,6 +88,8 @@ if($adres != "Default"){
 if($telefon != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "telefon = '$telefon'";
     $x++;
@@ -84,6 +98,8 @@ if($telefon != "Default"){
 if($maaş != 0){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "maaş $maaş_filtre $maaş";
     $x++;
@@ -92,6 +108,8 @@ if($maaş != 0){
 if($çalışma_durumu != "Default"){
     if($x!=0){
         $where .= " AND as ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "çalışma_durumu = '$çalışma_durumu'";
     $x++;
