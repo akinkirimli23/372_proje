@@ -19,9 +19,10 @@ $yaş_filtre = $_POST['yaş_filtre'];
 $cinsiyet = $_POST['cinsiyet'];
 
  
-$where = " WHERE ";
+$where = " ";
 $x = 0;
 if($id != 0){
+    $where .= "WHERE ";
     $where .= "id $id_filtre $id";
     $x++;
 }
@@ -29,6 +30,8 @@ if($id != 0){
 if($isim != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "isim = '$isim'";
     $x++;
@@ -37,6 +40,8 @@ if($isim != "Default"){
 if($soy_isim != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "soy_isim = '$soy_isim'";
     $x++;
@@ -45,6 +50,8 @@ if($soy_isim != "Default"){
 if($yaş != 0){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "yaş $yaş_filtre $yaş";
     $x++;
@@ -53,6 +60,8 @@ if($yaş != 0){
 if($cinsiyet != "Default"){
     if($x!=0){
         $where .= " AND ";
+    }else{
+        $where .= "WHERE ";
     }
     $where .= "cinsiyet = '$cinsiyet'";
     $x++;
@@ -78,7 +87,7 @@ $sql = "SELECT * FROM öğrenci" .  "$where;";
 $result = $conn->query($sql);
 
 $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
-
+echo $sql;
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
