@@ -232,5 +232,21 @@ END;
 
 DELIMITER ;
 
+DELIMITER //
+
+CREATE TRIGGER prevent_delete_active_course
+BEFORE DELETE
+ON Dersler
+FOR EACH ROW
+BEGIN
+    IF OLD.aktiflik = 'aktif' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Active courses cannot be deleted';
+    END IF;
+END;
+//
+
+DELIMITER ;
+
 
 
