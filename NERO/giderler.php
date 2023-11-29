@@ -70,19 +70,24 @@ $conn->close();
     <section class="sub-header">
         <nav>
         <a href="index.html"><img src="Resim/home.png" alt=""></a>
-            <div class="nav-links">
+        <div class="nav-links">
+                <div>
+                <li> <a href="filtre.php">Filtre</a></li>
+            </div>
                     <ul>
-                    <li> <a href="index.html">HOME</a></li>
+                        <li> <a href="index.html">HOME</a></li>
                         <li> <a href="veli.php">Velilerimiz</a></li>
                         <li> <a href="mezunlar.php">Mezunlarımız</a></li>
                         <li> <a href="Ogretmen.php">Öğretmen</a></li>
                         <li> <a href="ogrenci.php">Öğrenci</a></li>
                         <li> <a href="idari_personel.php">İdari Personel</a></li>
-                      
+                                
+
                         <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>
                         <li> <a href="malzemeler.php">Malzemeler</a></li>         
+
 
 
                     </ul>
@@ -97,42 +102,44 @@ $conn->close();
 
 
 
-< <section class="sekmeler-us">
+ <section class="sekmeler-us">
 
 <section class="blog-content">
     
-    
+<h2>Giderler İnsert</h2>
+    <br>
+       <br>
 
 <div class="contact-col">
     <form method="POST" action="gider_insert.php" enctype="multipart/form-data">
         
         
-        <label for="yıl"><b>yıl:</b></label>
+        <label for="yıl"><b>Yıl:</b></label>
         <input type="text" name="yıl" id="yıl" placeholder="Lütfen yılı giriniz" required>
 
-        <label for="ay"><b>ay:</b></label>
+        <label for="ay"><b>Ay:</b></label>
         <input type="text" name="ay" id="ay" placeholder="Lütfen ayı giriniz" required>
 
-        <label for="hafta"><b>hafta:</b></label>
+        <label for="hafta"><b>Hafta:</b></label>
         <input type="text" name="hafta" id="hafta" placeholder="Lütfen haftayı giriniz" required>
 
         
-        <label for="kira_gideri"><b>kira_gideri:</b></label>
+        <label for="kira_gideri"><b>Kira_Gideri:</b></label>
         <input type="number" name="kira_gideri" id="kira_gideri" placeholder="Lütfen kira giderini giriniz" required>
 
-        <label for="temizlik_gideri"><b>temizlik_gideri:</b></label>
+        <label for="temizlik_gideri"><b>Remizlik_Gideri:</b></label>
         <input type="number" name="temizlik_gideri" id="temizlik_gideri" placeholder="Lütfen temizlik giderini giriniz" required>
 
-        <label for="maaş_gideri"><b>maaş_gideri:</b></label>
+        <label for="maaş_gideri"><b>Maaş_Gideri:</b></label>
         <input type="number" name="maaş_gideri" id="maaş_gideri" placeholder="Lütfen maaş giderini giriniz" required>
     
-        <label for="su_gideri"><b>su_gideri:</b></label>
+        <label for="su_gideri"><b>Su_Gideri:</b></label>
         <input type="number" name="su_gideri" id="su_gideri" placeholder="Lütfen su giderini giriniz" required>
 
-        <label for="diğer_giderler"><b>diğer_giderler:</b></label>
+        <label for="diğer_giderler"><b>Diğer_Giderler:</b></label>
         <input type="number" name="diğer_giderler" id="diğer_giderler" placeholder="Lütfen diğer giderleri giriniz" required>
 
-        <label for="bakım_gideri"><b>bakım_gideri:</b></label>
+        <label for="bakım_gideri"><b>Bakım_Gideri:</b></label>
         <input type="number" name="bakım_gideri" id="bakım_gideri" placeholder="Lütfen bakım giderini giriniz" required>
 
 <br>

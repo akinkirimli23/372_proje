@@ -130,7 +130,7 @@ if ($conn->query($sql) === TRUE) {
     
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;
-}
+}   
 */
 
 

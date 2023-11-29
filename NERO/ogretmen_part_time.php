@@ -2,10 +2,7 @@
 $dbservername = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-
 $dbname = "db_proje_v4";
-
-
 
 $conn = new mysqli($dbservername, $dbusername, $dbpassword, $dbname);
 
@@ -116,8 +113,7 @@ $conn->close();
         
         <nav>
             
-
-        <a href="index.html"><img src="Resim/home.png" alt=""></a>
+            <a href="index.html"><img src="Resim/home.png" alt=""></a>
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
@@ -132,14 +128,11 @@ $conn->close();
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>    
 
-
                     </ul>
             </div>
         </nav>
 
-
       <h1>Ogretmenler Part Time</h1>
-
     </section>
 
 
@@ -154,7 +147,6 @@ $conn->close();
     <form method="POST" action="Ogretmen_insert.php" enctype="multipart/form-data">
 
    
-
     <label for="ad">Ad:</label>
     <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
 
@@ -250,7 +242,6 @@ $conn->close();
 
         }
         ?>
-
     </table>
 </body>
 </html> 
