@@ -316,9 +316,10 @@ $conn->close();
 			  <th> Soy isim </th> 
 			  <th> Yaş </th> 
               <th> Cinsiyet </th> 
-              <th> Sil </th> 
+               
               <th> Ogrenci Ders Programı </th> 
               <th> Ogrenci Müsait Zaman Programı </th> 
+              <th> Sil </th>
 		</tr> 
 
         </section>
@@ -336,9 +337,10 @@ $conn->close();
             echo "<td>" . $row["soy_isim"] . "</td>";
             echo "<td>" . $row["yaş"] . "</td>";
             echo "<td>" . $row["cinsiyet"] . "</td>";
-            echo "<td><a href='ogrenci_delete.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+           
             echo "<td> <a href = 'öğrenci_ders_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";
-            echo "<td> <a href = 'ogrenci_musait_zamanlar_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";    
+            echo "<td> <a href = 'ogrenci_musait_zamanlar_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>"; 
+            echo "<td><a href='ogrenci_delete.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";   
             echo "</tr>";
         }
         ?>      
