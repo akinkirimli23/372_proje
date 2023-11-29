@@ -82,7 +82,7 @@ $conn->close();
                         <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>
-                        <li> <a href="malzemeler.php">Malzemeler</a></li>         
+                        <li> <a href="malzeme.php">Malzemeler</a></li>         
 
 
                     </ul>
@@ -97,7 +97,7 @@ $conn->close();
 
 
 
-< <section class="sekmeler-us">
+ <section class="sekmeler-us">
 
 <section class="blog-content">
     
