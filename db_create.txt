@@ -216,5 +216,21 @@ END;
 
 DELIMITER ;
 
+DELIMITER //
+
+CREATE TRIGGER delete_cascade_trigger
+AFTER DELETE
+ON Dersler
+FOR EACH ROW
+BEGIN
+    DELETE FROM Ders_Gün_Saat WHERE ders_kodu = OLD.ders_kodu;
+    DELETE FROM Malzeme_ders WHERE ders_kodu = OLD.ders_kodu;
+    DELETE FROM Ögrenci_Ders WHERE ders_kodu = OLD.ders_kodu;
+    -- Add more cascading deletes as needed
+END;
+//
+
+DELIMITER ;
+
 
 
