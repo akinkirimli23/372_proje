@@ -248,5 +248,17 @@ END;
 
 DELIMITER ;
 
+DELIMITER //
 
+CREATE TRIGGER update_total_expenses
+AFTER INSERT
+ON Öğretmen
+FOR EACH ROW
+BEGIN
+    UPDATE Giderler
+    SET maaş_gideri = maaş_gideri + NEW.maaş;
+END;
+//
+
+DELIMITER ;
 
