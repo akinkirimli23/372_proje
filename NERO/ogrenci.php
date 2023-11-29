@@ -117,7 +117,7 @@ $conn->close();
                         <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>
-                        <li> <a href="malzemeler.php">Malzemeler</a></li>         
+                        <li> <a href="malzeme.php">Malzemeler</a></li>         
 
 
 
@@ -264,7 +264,7 @@ $conn->close();
 
 <br>
 
-<h2>Öğrenci Ders İnsert</h2>
+<h2>Öğrenci Gün Saat İnsert</h2>
             <br>
                <br>
 
@@ -277,7 +277,7 @@ $conn->close();
 
     
         <label for="öğrenci_id"><b>Öğrenci ID:</b></label>
-      
+        <input type="number" name="öğrenci_id" id="öğrenci_id" placeholder="Lütfen Öğrenci giriniz" required>
 
         <label for="başlangıç_saat"><b>Başlangıç Saat:</b></label>
         <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
