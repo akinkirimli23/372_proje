@@ -11,23 +11,22 @@ if ($conn->connect_error) {
 
 
 $id = $_POST['id'];
+$id_filtre = $_POST['id_filtre'];
 $isim = $_POST['isim'];
 $soy_isim = $_POST['soy_isim'];
 $yaş = $_POST['yaş'];
+$yaş_filtre = $_POST['yaş_filtre'];
 $cinsiyet = $_POST['cinsiyet'];
-$yeni_isim = $_POST['yeni_isim']; 
-$yeni_soy_isim = $_POST['yeni_soy_isim'];
-$yeni_yaş = $_POST['yeni_yaş'];
-$yeni_cinsiyet = $_POST['yeni_cinsiyet'];
+
  
 $where = " WHERE ";
 $x = 0;
-if($id != "Default Id"){
-    $where .= "id = '$id'";
+if($id != 0){
+    $where .= "id $id_filtre $id";
     $x++;
 }
 
-if($isim != "Default Ad"){
+if($isim != "Default"){
     if($x!=0){
         $where .= " AND ";
     }
@@ -35,7 +34,7 @@ if($isim != "Default Ad"){
     $x++;
 }
 
-if($soy_isim != "Default Soyad"){
+if($soy_isim != "Default"){
     if($x!=0){
         $where .= " AND ";
     }
@@ -47,11 +46,11 @@ if($yaş != 0){
     if($x!=0){
         $where .= " AND ";
     }
-    $where .= "yaş = '$yaş'";
+    $where .= "yaş $yaş_filtre $yaş";
     $x++;
 }
 
-if($cinsiyet != "Default Cinsiyet"){
+if($cinsiyet != "Default"){
     if($x!=0){
         $where .= " AND ";
     }
@@ -61,50 +60,31 @@ if($cinsiyet != "Default Cinsiyet"){
 
 
 
-$set = " SET ";
-$x = 0;
 
-if($yeni_isim != "Default Yeni Ad"){
 
-    $set .= "isim = '$yeni_isim'";
-    $x++;
-}
-
-if($yeni_soy_isim != "Default Yeni Soyad"){
-    if($x!=0){
-        $set .= " , ";
-    }
-    $set .= "soy_isim = '$yeni_soy_isim'";
-    $x++;
-}
-
-if($yeni_yaş != 0){
-    if($x!=0){
-        $set .= " , ";
-    }
-    $set .= "yaş = '$yeni_yaş'";
-    $x++;
-}
-
-if($yeni_cinsiyet != "Default Yeni Cinsiyet"){
-    if($x!=0){
-        $set .= " ,";
-    }
-    $set .= "cinsiyet = '$yeni_cinsiyet'";
-    $x++;
-}
-
-$sql = "UPDATE öğrenci ". "$set" . "$where ;";
+$sql = "SELECT * FROM öğrenci" .  "$where;";
 
 
 
 
 
-if ($conn->query($sql) === TRUE) {
-    header("Location: ogrenci.php");
+/*if ($conn->query($sql) === TRUE) {
+    //header("Location: ogrenci.php");
     
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;
+}
+*/
+$result = $conn->query($sql);
+
+$data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
+      //  echo "ozi"
+      //  echo $data[0];
+    }
 }
 
 
@@ -136,3 +116,43 @@ if ($conn->query($sql) === TRUE) {
 */
 
 ?>
+
+<!DOCTYPE html>
+<html> 
+    <head> 
+            <title> Fetch Data From Database </title> 
+        </head> 
+        <body> 
+        <div style="text-align: center;">
+            <h1>Öğrenci Verileri</h1>
+            <br>
+        </div>
+        <body style="background-color:lightgray;">
+        
+        <table align="center" border="1px" style="width=100%; line-height:40px;"> 
+        <tr> 
+            
+            </tr> 
+                <th>  ID </th> 
+                <th> İsim </th> 
+                <th> Soy isim </th> 
+                <th> Yaş </th> 
+                <th> Cinsiyet </th> 
+            </tr> 
+
+
+
+            <?php
+            foreach ($data as $row) {
+                echo "<tr>";
+                echo "<td><a href='öğrenci_ders_programı.php?id=" . $row["id"] . "'>"  . $row["id"]  . "</a></td>";
+                echo "<td>" . $row["isim"] . "</td>";
+                echo "<td>" . $row["soy_isim"] . "</td>";
+                echo "<td>" . $row["yaş"] . "</td>";
+                echo "<td>" . $row["cinsiyet"] . "</td>";
+                echo "</tr>";
+            }
+            ?>      
+        </table>
+    </body>
+</html>

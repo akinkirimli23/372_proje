@@ -126,6 +126,7 @@ $conn->close();
         </select>
         <br>
         <br>
+
         <label for="adres"><b>Adres:</b></label>
     <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
@@ -164,8 +165,8 @@ $conn->close();
         <label for="gün_adı"><b>Gün Adı:</b></label>
         <input type="text" name="gün_adı" id="gün_adı" placeholder="Lütfen Gün Adı giriniz" required>
 
-        <label for="başlangıç_saat"><b>Başlangıç Saat:</b></label>
-        <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
+        <label for="başlangıç_saat">Başlangıç Saat:</label>
+ 
 
         <label for="bitiş_saati"><b>Bitiş Saati:</b></label>
         <input type="time" name="bitiş_saati" id="bitiş_saati" placeholder="Lütfen Bitiş Saati giriniz" required>
@@ -202,6 +203,7 @@ $conn->close();
               <th> Telefon </th> 
               <th> Maaş </th> 
               <th> Çalışma Durumu </th> 
+              <th> Müsaitlik </th> 
               <th> Sil </th> 
 
 		</tr> 
@@ -211,7 +213,7 @@ $conn->close();
         <?php
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<td>" . $row["idari_personel_id"] . "</td>";
+           echo "<td>" . $row["idari_personel_id"] . "</td>";
             echo "<td>" . $row["isim"] . "</td>";
             echo "<td>" . $row["soy_isim"] . "</td>";
             echo "<td>" . $row["yaş"] . "</td>";
@@ -220,9 +222,10 @@ $conn->close();
             echo "<td>" . $row["telefon"] . "</td>";
             echo "<td>" . $row["maaş"] . "</td>";
             echo "<td>" . $row["çalışma_durumu"] . "</td>";
-            echo "<td><a href='idari_personel_delete.php?idari_personel_id=" . $row["idari_personel_id"] . "' onclick=\"return confirm('Are you sure?')\">X</a></td>";
 
-
+            echo "<td><a href = 'idari_personel_musait_zamanlar_programi.php ? idari_personel_id=" . $row["idari_personel_id"] . "'>"  . "Müsaitlik"  . "</a></td>";
+            echo "<td><a href='idari_personel_delete.php?idari_personel_id=" . $row["idari_personel_id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+               
             echo "</tr>";
         }
         ?>
