@@ -117,24 +117,21 @@ $conn->close();
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                        <li> <a href="veli.php">Velilerimiz</a></li>
-                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                        <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
-                        <li> <a href="ogrenci.php">Öğrenci</a></li>
-                        <li> <a href="idari_personel.php">İdari Personel</a></li>
-                        <li> <a href="idari_personel_part_time.php">idari Personel Part Time</a></li>
-                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                        <li> <a href="dersler.php">Dersler</a></li>
-                        <li> <a href="giderler.php">Giderler</a></li>      
-
+                                                <li> <a href="veli.php">Velilerimiz</a></li>
+                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                                               
+                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
+                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                                                <li> <a href="dersler.php">Dersler</a></li>
 
 
                     </ul>
             </div>
         </nav>
-            
-        <a href="" class="hero-btn"> <h1>Velilerimiz</h1></a> 
+
+<a href="" class="hero-btn"> <h1>Velilerimiz</h1></a> 
         </section>
 
 
@@ -158,39 +155,39 @@ $conn->close();
 
     
 
-    <label for="ad">Ad:</label>
-    <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
+        <label for="ad">Ad:</label>
+        <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
 
-    <label for="soyad">Soyad:</label>
-    <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required>
-    
+        <label for="soyad">Soyad:</label>
+        <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required>
+        
 
-    <label for="yaş">Yaş:</label>
-    <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required>
+        <label for="yaş">Yaş:</label>
+        <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required>
 
-    <label for="cinsiyet">Cinsiyet:</label>
-    <select name="cinsiyet" id="cinsiyet" required>
-        <option value="erkek">Erkek</option>
-        <option value="kadin">Kadın</option>
-        <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
-    </select>
-    <br>
-    <br>   
+        <label for="cinsiyet">Cinsiyet:</label>
+        <select name="cinsiyet" id="cinsiyet" required>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+            <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+        </select>
+        <br>
+        <br>   
 
-    <label for="adres">Adres:</label>
-    <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
+        <label for="adres">Adres:</label>
+        <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
-    <label for="telefon">Telefon:</label>
-    <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
 
 
-    <label for="ünvan">Ünvan:</label>
-    <input type="text" name="ünvan" id="ünvan" placeholder="Lütfen unvan giriniz" required>
+        <label for="ünvan">Ünvan:</label>
+        <input type="text" name="ünvan" id="ünvan" placeholder="Lütfen unvan giriniz" required>
 
-    <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
 
-    <button type="submit" class="hero-btn red-btn">Gönder</button> 
-</form>
+        <button type="submit" class="hero-btn red-btn">Gönder</button> 
+    </form>
 
         
         

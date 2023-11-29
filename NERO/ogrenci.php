@@ -18,9 +18,30 @@ $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
+      //  echo "ozi"
+      //  echo $data[0];
     }
 }
 
+//$size = count($data);
+//for($x = 0; $x < $size; $x++){
+//    
+//        if (!empty($data)) {
+//            $row = $data[$x];
+//            echo "<tr>";
+//            echo "<td>" . $row["id"] . "</td>" ;    
+//            echo "<td>" . $row["isim"] . "</td>";
+//            echo "<td>" . $row["soy_isim"] . "</td>";
+//            echo "<td>" . $row["yaş"] . "</td>";
+//            echo "<td>" . $row["cinsiyet"] . "</td>";
+//            echo "</tr>";
+//            echo "</br>"; 
+//        } 
+//        else {
+//            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
+//        }
+//    
+//}
 $conn->close();
 ?>  
 
@@ -46,6 +67,9 @@ $conn->close();
         width: 100%;
         height: 100%;
         text-align: center;
+
+        
+
         }
 
         
@@ -108,17 +132,14 @@ $conn->close();
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                        <li> <a href="veli.php">Velilerimiz</a></li>
-                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                        <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
-                        <li> <a href="ogrenci.php">Öğrenci</a></li>
-                        <li> <a href="idari_personel.php">İdari Personel</a></li>
-                        <li> <a href="idari_personel_part_time.php">idari Personel Part Time</a></li>
-                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                        <li> <a href="dersler.php">Dersler</a></li>
-                        <li> <a href="giderler.php">Giderler</a></li>    
-
+                                                <li> <a href="veli.php">Velilerimiz</a></li>
+                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                                               
+                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
+                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                                                <li> <a href="dersler.php">Dersler</a></li>
 
                     </ul>
             </div>
@@ -184,7 +205,7 @@ $conn->close();
 
             
             <div class="contact-col2">
-    <form method="POST" action="ogrenci_update.php" enctype="multipart/form-data">
+     <form method="POST" action="ogrenci_update.php" enctype="multipart/form-data">
 
         <label for="id">ID:</label>
         <input type="text" name="id" id="id" placeholder="Lütfen ID giriniz" required value="Default Id">
@@ -316,12 +337,13 @@ $conn->close();
 			  <th> Soy isim </th> 
 			  <th> Yaş </th> 
               <th> Cinsiyet </th> 
-              <th> Sil </th> 
+                <th> Sil </th> 
               <th> Ogrenci Ders Programı </th> 
               <th> Ogrenci Müsait Zaman Programı </th> 
+
 		</tr> 
 
-        </section>
+</section>
         </section>
 
 

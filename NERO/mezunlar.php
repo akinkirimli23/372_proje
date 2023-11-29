@@ -94,18 +94,14 @@ $conn->close();
             <div class="nav-links">
                     <ul>
                     <li> <a href="index.html">HOME</a></li>
-                        <li> <a href="veli.php">Velilerimiz</a></li>
-                        <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                        <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                        <li> <a href="ogretmen_part_time.php">Öğretmen part time</a></li>
-                        <li> <a href="ogrenci.php">Öğrenci</a></li>
-                        <li> <a href="idari_personel.php">İdari Personel</a></li>
-                        <li> <a href="idari_personel_part_time.php">idari Personel Part Time</a></li>
-                        <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                        <li> <a href="dersler.php">Dersler</a></li>
-                        <li> <a href="giderler.php">Giderler</a></li>      
-
-
+                                                <li> <a href="veli.php">Velilerimiz</a></li>
+                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                                               
+                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
+                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                                                <li> <a href="dersler.php">Dersler</a></li>
 
                     </ul>
             </div>
@@ -147,13 +143,13 @@ $conn->close();
         <br>
         <br>
         <label for="adres">Adres:</label>
-    <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
+        <textarea rows="4" name="adres" id="adres" placeholder="Lütfen adresinizi giriniz" required></textarea>
 
-    <label for="telefon">Telefon:</label>
-    <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" name="telefon" id="telefon" placeholder="Lütfen telefon numaranızı giriniz" required>
 
-    <label for="şirket_isim">Şirket İsim:</label>
-    <textarea rows="4" name="şirket_isim" id="şirket_isim" placeholder="Lütfen şirket isim giriniz" required></textarea>
+        <label for="şirket_isim">Şirket İsim:</label>
+        <textarea rows="4" name="şirket_isim" id="şirket_isim" placeholder="Lütfen şirket isim giriniz" required></textarea>
 
         <br>
         <br>
