@@ -120,7 +120,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Mezun Verileri</h1>
+        <h1>Malzeme Verileri</h1>
         <br>
     </div>
     <body style="background-color:lightgray;">
