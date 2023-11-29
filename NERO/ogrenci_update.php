@@ -108,31 +108,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-
-/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $id = $_POST["id"];
-    $isim = $_POST["isim"];
-    $yeni_isim = $_POST["yeni_isim"];
-    $soy_isim = $_POST["soy_isim"];
-    $yeni_soy_isim = $_POST["yeni_soy_isim"];
-    $yas = $_POST["yaş"];
-    $yeni_yas = $_POST["yeni_yaş"];
-    $cinsiyet = $_POST["cinsiyet"];
-    $yeni_cinsiyet = $_POST["yeni_cinsiyet"];
-
-    // TODO: Add your logic to update the student record with the new information
-    // Example: Print the received data
-    echo "ID: $id<br>";
-    echo "Ad: $isim (Yeni Ad: $yeni_isim)<br>";
-    echo "Soyad: $soy_isim (Yeni Soyad: $yeni_soy_isim)<br>";
-    echo "Yaş: $yas (Yeni Yaş: $yeni_yas)<br>";
-    echo "Cinsiyet: $cinsiyet (Yeni Cinsiyet: $yeni_cinsiyet)<br>";
-
-    // TODO: Update the database with the new information
-    // Example SQL statement (modify according to your database schema)
-    // $sql = "UPDATE ogrenci SET isim='$yeni_isim', soy_isim='$yeni_soy_isim', yaş='$yeni_yas', cinsiyet='$yeni_cinsiyet' WHERE id='$id'";
-}
-*/
-
 ?>

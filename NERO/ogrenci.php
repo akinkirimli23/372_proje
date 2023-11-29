@@ -18,9 +18,30 @@ $data = array(); // Verileri depolamak için bir dizi oluşturuyoruz
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data[] = $row; // Her bir satırdaki veriyi diziye ekliyoruz
+      //  echo "ozi"
+      //  echo $data[0];
     }
 }
 
+//$size = count($data);
+//for($x = 0; $x < $size; $x++){
+//    
+//        if (!empty($data)) {
+//            $row = $data[$x];
+//            echo "<tr>";
+//            echo "<td>" . $row["id"] . "</td>" ;    
+//            echo "<td>" . $row["isim"] . "</td>";
+//            echo "<td>" . $row["soy_isim"] . "</td>";
+//            echo "<td>" . $row["yaş"] . "</td>";
+//            echo "<td>" . $row["cinsiyet"] . "</td>";
+//            echo "</tr>";
+//            echo "</br>"; 
+//        } 
+//        else {
+//            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
+//        }
+//    
+//}
 $conn->close();
 ?>  
 
@@ -46,6 +67,9 @@ $conn->close();
         width: 100%;
         height: 100%;
         text-align: center;
+
+        
+
         }
 
         
@@ -334,7 +358,7 @@ $conn->close();
               <th> Sil </th>
 		</tr> 
 
-        </section>
+</section>
         </section>
 
 
