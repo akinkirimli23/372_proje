@@ -10,22 +10,21 @@ if ($conn->connect_error) {
     die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
 }
 
-if (isset($_GET['öğretmen_id'])) {
+if (isset($_GET['ders_kodu'])) {
     // Retrieve the id from the URL parameter
-    $öğretmen_id = $_GET['öğretmen_id'];
+    $ders_kodu = $_GET['ders_kodu'];
 
     // Now you can use $id in your code
-   // echo "Selected öğretmen ID: " . $öğretmen_id;
+    //echo "Selected öğrenci ID: " . $ders_kodu;
 } else {
     // Handle the case where 'id' is not set in the URL
    // echo "Student ID is not provided in the URL.";
 }
 
 $sql = "SELECT *
-        FROM öğretmen
-        JOIN dersler ON öğretmen.öğretmen_id = dersler.öğretmen_id  
+        FROM dersler
         JOIN ders_gün_saat ON ders_gün_saat.ders_kodu = dersler.ders_kodu
-        WHERE öğretmen.öğretmen_id = '$öğretmen_id';";
+        WHERE dersler.ders_kodu = '$ders_kodu';";
 
 
 $result = $conn->query($sql);
@@ -138,39 +137,35 @@ $conn->close();
 <body>  
 
 
-<section class="sub-header">
-        
+    <section class="sub-header">
         <nav>
-                <a href="index.html"><img src="Resim/home.png" alt=""></a>
-                <div class="nav-links">
-                    <div>
-                    <li> <a href="filtre.php">Filtre</a></li>
-                </div>
-                        <ul>
-                            <li> <a href="index.html">HOME</a></li>
-                            <li> <a href="veli.php">Velilerimiz</a></li>
-                            <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                            <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                            <li> <a href="ogrenci.php">Öğrenci</a></li>
-                            <li> <a href="idari_personel.php">İdari Personel</a></li>
-                                    
-    
-                            <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                            <li> <a href="dersler.php">Dersler</a></li>
-                            <li> <a href="giderler.php">Giderler</a></li>
-                            <li> <a href="malzeme.php">Malzemeler</a></li>         
-    
-    
-    
-                        </ul>
-                </div>
-            </nav>
+            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
+            <div class="nav-links">
+                    <ul>
+                    <li> <a href="index.html">HOME</a></li>
+                                                <li> <a href="veli.php">Velilerimiz</a></li>
+                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                                               
+                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
+                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                                                <li> <a href="dersler.php">Dersler</a></li>
+                       
 
-      <h1>Öğretmenler</h1>
+
+                    </ul>
+            </div>
+        </nav>
+
+     
     </section>
-    <br>
-    <br>
 
+
+        <section class="blog-content">
+            
+
+        </section>
 
 
 
@@ -180,8 +175,7 @@ $conn->close();
 	</head> 
 	<body> 
     <div style="text-align: center;">
-        <h1>Öğretmen Ders Programı</h1>
-        <br>
+        <h1> Ders Programı</h1>
         <br>
     </div>
     <body style="background-color:powderblue;">

@@ -153,22 +153,53 @@ $conn->close();
     
         <button type="submit" class="hero-btn red-btn"><b>Gönder</b>
     </button> 
-
-        
-            <label for="aktiflik">Aktiflik:</label>
-            <input type="text" name="aktiflik" id="aktiflik" placeholder="Lütfen dersin aktiflik durumunu giriniz" required>
-        
-            <label for="ders_isim">Ders İsim:</label>
-            <input type="text" name="ders_isim" id="ders_isim" placeholder="Lütfen ders ismini giriniz" required>
-            
-            <label for="öğretmen_id">Öğretmen Id:</label>
-            <input type="number" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required>
-        
-            <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
-        
-            <button type="submit" class="hero-btn red-btn">Gönder</button> 
-
+<br>
+        <br>
         </form>
+</div>  
+        <br>
+        <br>
+
+        <h2>Ders Update</h2>
+               <br>
+               <br>
+            <div class="contact-col">
+    <form method="POST" action="dersler_update.php" enctype="multipart/form-data">
+
+        <label for="ders_kodu"><b>Ders Kodu:</b></label>
+        <input type="text" name="ders_kodu" id="ders_kodu" placeholder="Lütfen ders kodu giriniz" required value="Default ders kodu">
+        <br>
+        <label for="aktiflik"><b>aktiflik:</b></label>
+        <input type="text" name="aktiflik" id="aktiflik" placeholder="Lütfen aktiflik giriniz" required value="Default aktiflik">
+
+        <label for="yeni_aktiflik"><b>Yeni aktiflik giriniz:</b></label>
+        <input type="text" name="yeni_aktiflik" id="yeni_aktiflik" placeholder="Lütfen yeni yeni aktiflik giriniz" required value="Default Yeni aktiflik">
+        <br>
+        <label for="ders_isim"><b>ders isim:</b></label>
+        <input type="text" name="ders_isim" id="ders_isim" placeholder="Lütfen ders isim giriniz" required value="Default ders isim">
+
+        <label for="yeni_ders_isim"><b>yeni ders isim:</b></label>
+        <input type="text" name="yeni_ders_isim" id="yeni_ders_isim" placeholder="Lütfen yeni ders isim giriniz" required value="Default Yeni ders isim">
+        <br>
+        <label for="öğretmen_id"><b>öğretmen id:</b></label>
+        <input type="number" name="öğretmen_id" id="öğretmen_id" placeholder="Lütfen öğretmen id giriniz" required value=0>
+
+        <label for="yeni_öğretmen_id"><b>yeni öğretmen id:</b></label>
+        <input type="number" name="yeni_öğretmen_id" id="yeni_öğretmen_id" placeholder="Lütfen yeni öğretmen id giriniz" required  value=0>
+        <br>
+        <br>
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+<br>
+        
+        <button type="submit" class="hero-btn red-btn"><b>Gönder</b></button>
+        <br>
+        <br>
+    </form>
+</div>
+<br>
+        <br>
+        <h2>Dersler Gün Saat</h2>
+
         <br>
         <br><br>
         <div class="contact-col">
@@ -230,7 +261,7 @@ $conn->close();
         <?php
         foreach ($data as $row) {
             echo "<tr>";
-            echo "<td>" . $row["ders_kodu"] . "</td>";
+            echo "<td> <a href = 'dersler_ders_program.php ? ders_kodu=" . $row["ders_kodu"] . "'>" . $row["ders_kodu"] . "</a></td>";
             echo "<td>" . $row["aktiflik"] . "</td>";
             echo "<td>" . $row["ders_isim"] . "</td>";
             echo "<td>" . $row["öğretmen_id"] . "</td>";

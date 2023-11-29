@@ -15,10 +15,10 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Now you can use $id in your code
-    echo "Selected öğrenci ID: " . $id;
+    // echo "Selected öğrenci ID: " . $id;
 } else {
     // Handle the case where 'id' is not set in the URL
-    echo "Student ID is not provided in the URL.";
+    // echo "Student ID is not provided in the URL.";
 }
 
 $sql = "SELECT *
@@ -138,26 +138,33 @@ $conn->close();
 <body>  
 
 
-    <section class="sub-header">
+<section class="sub-header">
+        
         <nav>
-            <a href="index.html"><img src="Resim/e-okul_küçük_resim.jpg" alt=""></a>
-            <div class="nav-links">
-                    <ul>
-                    <li> <a href="index.html">HOME</a></li>
-                                                <li> <a href="veli.php">Velilerimiz</a></li>
-                                                <li> <a href="mezunlar.php">Mezunlarımız</a></li>
-                                                <li> <a href="Ogretmen.php">Öğretmen</a></li>
-                                               
-                                                <li> <a href="ogrenci.php">Öğrenci</a></li>
-                                                <li> <a href="idari_personel.php">İdari Personel</a></li>
-                                                <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
-                                                <li> <a href="dersler.php">Dersler</a></li>
-                       
-
-
-                    </ul>
-            </div>
-        </nav>
+                <a href="index.html"><img src="Resim/home.png" alt=""></a>
+                <div class="nav-links">
+                    <div>
+                    <li> <a href="filtre.php">Filtre</a></li>
+                </div>
+                        <ul>
+                            <li> <a href="index.html">HOME</a></li>
+                            <li> <a href="veli.php">Velilerimiz</a></li>
+                            <li> <a href="mezunlar.php">Mezunlarımız</a></li>
+                            <li> <a href="Ogretmen.php">Öğretmen</a></li>
+                            <li> <a href="ogrenci.php">Öğrenci</a></li>
+                            <li> <a href="idari_personel.php">İdari Personel</a></li>
+                                    
+    
+                            <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
+                            <li> <a href="dersler.php">Dersler</a></li>
+                            <li> <a href="giderler.php">Giderler</a></li>
+                            <li> <a href="malzeme.php">Malzemeler</a></li>         
+    
+    
+    
+                        </ul>
+                </div>
+            </nav>
 
      
     </section>

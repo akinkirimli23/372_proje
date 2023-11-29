@@ -153,6 +153,127 @@ $conn->close();
     </form>
 </div>
 
+<h2>İdari Personel Update
+               <br>
+               <br>
+
+    </h2>
+
+            
+            <div class="contact-col">
+     <form method="POST" action="idari_personel_update.php" enctype="multipart/form-data">
+
+        <label for="idari_personel_id"><b>ID:</b></label>
+        <input type="number" name="idari_personel_id" id="idari_personel_id" placeholder="Lütfen ID giriniz" required value=0>
+        <br>
+
+        <label for=""><b>İdari Personel Id filtre:</b></label>
+            <select name="idari_personel_id_filtre" id="idari_personel_id_filtre" required>
+                <option value="=">Eşittir</option>
+                <option value=">">Büyüktür</option>
+                <option value="<">Küçüktür</option>
+                <option value=">=">Büyük eşittir</option>
+                <option value="<=">Küçük eşittir</option>
+                <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+            </select>
+            <br>
+            <br>
+
+        <label for="isim"><b>Ad:</b></label>
+        <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required value="Default Ad">
+
+        <label for="yeni_isim"><b>Yeni Ad:</b></label>
+        <input type="text" name="yeni_isim" id="yeni_isim" placeholder="Lütfen yeni adınızı giriniz" required value="Default Yeni Ad">
+        <br>
+        <label for="soy_isim"><b>Soyad:</b></label>
+        <input type="text" name="soy_isim" id="soy_isim" placeholder="Lütfen soyadınızı giriniz" required value="Default Soyad">
+
+        <label for="yeni_soy_isim"><b>Yeni Soyad:</b></label>
+        <input type="text" name="yeni_soy_isim" id="yeni_soy_isim" placeholder="Lütfen yeni soyadınızı giriniz" required value="Default Yeni Soyad">
+        <br>
+        <label for="yaş"><b>Yaş:</b></label>
+        <input type="number" name="yaş" id="yaş" placeholder="Lütfen yaşınızı giriniz" required value=0>
+
+        <label for=""><b>Yaş filtre:</b></label>
+            <select name="yaş_filtre" id="yaş_filtre" required>
+                <option value="=">Eşittir</option>
+                <option value=">">Büyüktür</option>
+                <option value="<">Küçüktür</option>
+                <option value=">=">Büyük eşittir</option>
+                <option value="<=">Küçük eşittir</option>
+                <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+            </select>
+            <br>
+            <br>
+        
+        <label for="yeni_yaş"><b>Yeni Yaş:</b></label>
+        <input type="number" name="yeni_yaş" id="yeni_yaş" placeholder="Lütfen yeni yaşınızı giriniz" required  value=0>
+        <br>
+        <label for="cinsiyet"><b>Cinsiyet:</b></label>
+        <select name="cinsiyet" id="cinsiyet" required>
+            <option value="Default Cinsiyet">Default Cinsiyet</option>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+        </select>
+
+        <label for="yeni_cinsiyet"><b>Yeni Cinsiyet:</b></label>
+        <select name="yeni_cinsiyet" id="yeni_cinsiyet" required>
+            <option value="Default Yeni Cinsiyet">Default Yeni Cinsiyet</option>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+            <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+        </select>
+        <br>
+        <br>
+        <label for="adres"><b>adres:</b></label>
+        <input type="text" name="adres" id="adres" placeholder="Lütfen adres giriniz" required value="Default Adres">
+
+        <label for="yeni_adres"><b>Yeni adres:</b></label>
+        <input type="text" name="yeni_adres" id="yeni_adres" placeholder="Lütfen yeni adres giriniz" required value="Default Yeni adres">
+        <br>
+        <br>
+        <label for="telefon"><b>telefon:</b></label>
+        <input type="text" name="telefon" id="telefon" placeholder="Lütfen telefon giriniz" required value="Default telefon">
+
+        <label for="yeni_telefon"><b>Yeni telefon:</b></label>
+        <input type="text" name="yeni_telefon" id="yeni_telefon" placeholder="Lütfen yeni telefon giriniz" required value="Default Yeni telefon">
+        <br>
+        <label for="maaş"><b>maaş:</b></label>
+        <input type="number" name="maaş" id="maaş" placeholder="Lütfen maaş giriniz" required value=0>
+
+        <label for=""><b>maaş filtre:</b></label>
+            <select name="maaş_filtre" id="maaş_filtre" required>
+                <option value="=">Eşittir</option>
+                <option value=">">Büyüktür</option>
+                <option value="<">Küçüktür</option>
+                <option value=">=">Büyük eşittir</option>
+                <option value="<=">Küçük eşittir</option>
+                <!-- Diğer cinsiyet seçenekleri ekleyebilirsiniz -->
+            </select>
+            <br>
+            <br>
+            
+
+        <label for="yeni_maaş"><b>Yeni maaş:</b></label>
+        <input type="number" name="yeni_maaş" id="yeni_maaş" placeholder="Lütfen yeni maaş giriniz" required value=0>
+        <br>
+        <label for="çalışma_durumu"><b>çalışma_durumu:</b></label>
+        <input type="text" name="çalışma_durumu" id="çalışma_durumu" placeholder="Lütfen yeni çalışma durumu giriniz" required value="Default çalışma durumu">
+
+        <label for="yeni_çalışma_durumu"><b>Yeni maaş:</b></label>
+        <input type="text" name="yeni_çalışma_durumu" id="yeni_çalışma_durumu" placeholder="Lütfen yeni_çalışma_durumu giriniz" required value="Default Yeni çalışma durumu">
+        <br>
+
+        <!--textarea rows="8" name="mesaj" id="mesaj" placeholder="Mesajınızı buraya giriniz" required></textarea-->
+
+        <button type="submit" class="hero-btn red-btn"><b>Gönder</b></button> 
+        <br>
+        <br>
+    </form>
+</div>
+
+
+
 <br>
 <br>
 

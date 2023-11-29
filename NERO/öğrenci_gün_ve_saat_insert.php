@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 
-$öğrenci_id = $_POST['id'];
+$öğrenci_id = $_POST['öğrenci_id'];
 $başlangıç_saat = $_POST['başlangıç_saat'];
 $gün_adı = $_POST['gün_adı'];
 $bitiş_saati = $_POST['bitiş_saati'];
