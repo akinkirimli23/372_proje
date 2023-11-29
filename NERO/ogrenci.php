@@ -121,7 +121,7 @@ $conn->close();
                         <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>
-                        <li> <a href="malzemeler.php">Malzemeler</a></li>         
+                        <li> <a href="malzeme.php">Malzemeler</a></li>         
 
 
 
@@ -268,7 +268,7 @@ $conn->close();
 
 <br>
 
-<h2>Öğrenci Ders İnsert</h2>
+<h2>Öğrenci Gün Saat İnsert</h2>
             <br>
                <br>
 
@@ -281,7 +281,7 @@ $conn->close();
 
     
         <label for="öğrenci_id"><b>Öğrenci ID:</b></label>
-      
+        <input type="number" name="öğrenci_id" id="öğrenci_id" placeholder="Lütfen Öğrenci giriniz" required>
 
         <label for="başlangıç_saat"><b>Başlangıç Saat:</b></label>
         <input type="time" name="başlangıç_saat" id="başlangıç_saat" placeholder="Lütfen Başlangıç Saat giriniz" required>
@@ -328,9 +328,10 @@ $conn->close();
 			  <th> Soy isim </th> 
 			  <th> Yaş </th> 
               <th> Cinsiyet </th> 
-              <th> Sil </th> 
+               
               <th> Ogrenci Ders Programı </th> 
               <th> Ogrenci Müsait Zaman Programı </th> 
+              <th> Sil </th>
 		</tr> 
 
         </section>
@@ -349,10 +350,13 @@ $conn->close();
             echo "<td>" . $row["isim"] . "</td>";
             echo "<td>" . $row["soy_isim"] . "</td>";
             echo "<td>" . $row["yaş"] . "</td>";
-   
-            echo "<td><a href='ogrenci_delete.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";
+
+            echo "<td>" . $row["cinsiyet"] . "</td>";
+           
+
             echo "<td> <a href = 'öğrenci_ders_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";
-            echo "<td> <a href = 'ogrenci_musait_zamanlar_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>";    
+            echo "<td> <a href = 'ogrenci_musait_zamanlar_programi.php ? id=" . $row["id"] . "'>" . 'göster' . "</a></td>"; 
+            echo "<td><a href='ogrenci_delete.php?id=" . $row["id"] . "' onclick=\"return confirm('Are you sure?')\">Delete</a></td>";   
             echo "</tr>";
         }
         ?>      

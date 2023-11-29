@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 }
 
 
-$Öğrenci_id = $_POST['Öğrenci_id'];
+$öğrenci_id = $_POST['öğrenci_id'];
 $isim = $_POST['isim'];
 $soy_isim = $_POST['soy_isim'];
 $yaş = $_POST['yaş'];
@@ -19,7 +19,7 @@ $adres = $_POST['adres'];
 $telefon = $_POST['telefon'];
 $ünvan = $_POST['ünvan'];
 
-$sql = "INSERT INTO veli (isim,soy_isim,yaş,cinsiyet,adres,telefon,ünvan) VALUES ('$isim', '$soy_isim', '$yaş', '$cinsiyet', '$adres', '$telefon', '$ünvan')";
+$sql = "INSERT INTO veli (öğrenci_id,isim,soy_isim,yaş,cinsiyet,adres,telefon,ünvan) VALUES ('$öğrenci_id','$isim', '$soy_isim', '$yaş', '$cinsiyet', '$adres', '$telefon', '$ünvan')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: veli.php");

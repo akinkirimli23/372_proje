@@ -23,28 +23,7 @@ if ($result->num_rows > 0) {
     }
 }
 
-$size = count($data);
-for($x = 0; $x < $size; $x++){
-    if($data[$x]["yaş"] == "31"){
-        if (!empty($data)) {
-            $row = $data[$x];
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>" ;    
-            echo "<td>" . $row["isim"] . "</td>";
-            echo "<td>" . $row["soy_isim"] . "</td>";
-            echo "<td>" . $row["yaş"] . "</td>";
-            echo "<td>" . $row["cinsiyet"] . "</td>";
-            echo "<td>" . $row["adres"] . "</td>";
-            echo "<td>" . $row["telefon"] . "</td>";
-            echo "<td>" . $row["şirket_isim"] . "</td>";
 
-            echo "</tr>";
-            echo "</br>"; 
-        } else {
-            //echo "<tr><td colspan='4'>Veritabanında kayıt bulunmamaktadır.</td></tr>";
-        }
-    }
-}
 $conn->close();
 ?>  
 
@@ -107,7 +86,7 @@ $conn->close();
                         <li> <a href="temizlik_gorevlisi.php">Temizlik Görevlisi</a></li>
                         <li> <a href="dersler.php">Dersler</a></li>
                         <li> <a href="giderler.php">Giderler</a></li>
-                        <li> <a href="malzemeler.php">Malzemeler</a></li>         
+                        <li> <a href="malzeme.php">Malzemeler</a></li>         
 
 
 
