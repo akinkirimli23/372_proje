@@ -145,7 +145,7 @@ create table Ders_Gün_Saat (
 	gün_adı				varchar(30)	not null ,
 	başlangıç_saati 	time 		not null ,
 	bitiş_saati			time		not null,
-	PRIMARY KEY(ders_kodu, gün_adı, başlangıç_saati),
+	PRIMARY KEY(ders_kodu, gün_adı, başlangıç_saati , gün_adı),
     
 	constraint Fk6
 	 foreign key (ders_kodu) references Dersler(ders_kodu)
