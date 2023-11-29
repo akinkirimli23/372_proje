@@ -150,7 +150,8 @@ $conn->close();
 
     <form method="POST" action="veli_insert.php" enctype="multipart/form-data">
 
-    
+    <label for="öğrenci_id">Öğrenci Id:</label>
+    <input type="number" name="öğrenci_id" id="öğrenci_id" placeholder="Lütfen öğrenci id'sini giriniz" required>    
 
     <label for="ad"><b>Ad:</b></label>
     <input type="text" name="isim" id="isim" placeholder="Lütfen adınızı giriniz" required>
