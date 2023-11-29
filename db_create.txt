@@ -200,3 +200,21 @@ create table Giderler (
     primary key (yıl, ay , hafta)
 );
 
+DELIMITER //
+
+CREATE TRIGGER time_check_trigger
+BEFORE INSERT
+ON Ders_Gün_Saat
+FOR EACH ROW
+BEGIN
+    IF NEW.başlangıç_saati > NEW.bitiş_saati THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Warning: Başlangıç saati bitiş saatinden sonra olamaz';
+    END IF;
+END;
+//
+
+DELIMITER ;
+
+
+
