@@ -19,9 +19,10 @@ $öğretmen_id_filtre = $_POST['öğretmen_id_filtre'];
 
 
  
-$where = " WHERE ";
+$where = "  ";
 $x = 0;
 if($ders_kodu != "Default"){
+    $where .= "WHERE ";
     $where .= "ders_kodu $ders_kodu_filtre $ders_kodu";
     $x++;
 }
@@ -37,7 +38,8 @@ if($aktiflik != "Default"){
 if($ders_isim != "Default"){
     if($x!=0){
         $where .= " AND ";
-    }
+    }else{
+        $where .= "WHERE ";}
     $where .= "ders_isim = '$ders_isim'";
     $x++;
 }
@@ -45,7 +47,8 @@ if($ders_isim != "Default"){
 if($öğretmen_id != 0){
     if($x!=0){
         $where .= " AND ";
-    }
+    }else{
+        $where .= "WHERE ";}
     $where .= "öğretmen_id $öğretmen_id_filtre $öğretmen_id";
     $x++;
 }
@@ -60,12 +63,12 @@ $sql = "SELECT * FROM dersler" .  "$where;";
 
 
 
-if ($conn->query($sql) === TRUE) {
+/*if ($conn->query($sql) === TRUE) {
     //header("Location: ogrenci.php");
     
 } else {
     echo "Hata: " . $sql . "<br>" . $conn->error;
-}
+}*/
 
 $result = $conn->query($sql);
 
